@@ -1,0 +1,52 @@
+@import 'aos/dist/aos.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Brand palette from datamatrixiq.com source */
+  --primary: #0c67c4;
+  --primary-glow: rgba(12, 103, 196, 0.15);
+  --secondary: #2d465e;
+  --accent: #0d83fd;
+  --background: #ffffff;
+  --surface: #f3f9ff;
+  --text-default: #212529;
+  --text-muted: #5f6f7d;
+  
+  --default-font: 'Roboto', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --heading-font: 'Nunito', sans-serif;
+  --nav-font: 'Inter', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: var(--default-font);
+  color: var(--text-default);
+  background-color: var(--background);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  color: var(--secondary);
+  font-weight: 700;
+}
+
+/* Base link behavior to match site */
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  filter: brightness(1.2);
+}
+
+/* Custom utilities */
+.bg-hero-gradient {
+  background: linear-gradient(135deg, #f3f9ff 0%, #ffffff 100%);
+}
