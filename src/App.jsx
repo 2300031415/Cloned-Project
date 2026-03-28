@@ -507,8 +507,8 @@ const PartnershipSection = () => (
 const TeamSection = () => {
   const team = [
     { id: "shalu-mahawal", name: "Shalu Mahawal", role: "Founder & CEO", desc: "Sets the vision and drives strategic growth of Data Matrix IQ.", img: "https://datamatrixiq.com/media/le2bbmm0/profile1.png", linkedin: "https://www.linkedin.com/in/mahawals/", email: "contact@datamatrixiq.com", phone: "+61 451 110 993", bio: "Shalu's bio - Cofounder and Marketing Specialist with 25+ years of experience across customer service, marketing, customer care, and account management across the UK, New Zealand, and Australia. Specializes in IT solution sales and support, including CRM/CSM platforms, Salesforce, hosting, and data-driven solutions.<br><br>Known for consultative selling, account growth, and multi-team project coordination, and for building long-term client partnerships that drive measurable business outcomes. As Cofounder, leads teams and helps define and execute the strategic vision and growth roadmap for DataMatrixIQ." },
-    { id: "Zack ristov", name: "Zack Ristov", role: "Principal Data Consultant", img: "", linkedin: "https://www.linkedin.com/in/zack-ristov/", email: "contact@datamatrixiq.com", phone: "+61 449 602 007", bio: "Technology strategist with 25+ years of experience helping businesses and MSPs drive growth through AI, automation, and scalable platforms. Focused on improving efficiency, enabling digital transformation, and building strong partner ecosystems to deliver real business outcomes." },
     { id: "harsha-mahawal", name: "Harsha Mahawal", role: "Principal Data Consultant", desc: "Leads data strategy and solution delivery across the ANZ region.", img: "https://datamatrixiq.com/media/44gd51ch/profile_2.png", linkedin: "https://www.linkedin.com/in/harshamahawal/", email: "contact@datamatrixiq.com", phone: "+61 451 110 993", bio: "Harsha is a veteran data consultant specializing in large-scale data architecture and analytics. He leads technical delivery across Australia and New Zealand, helping enterprises unlock the power of their data through modern cloud platforms and intelligent automation." },
+    { id: "zack-ristov", name: "Zack Ristov", role: "Co-Founder & Director", desc: "Drives strategic business expansion and technology partnerships across the APAC region.", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop", linkedin: "https://www.linkedin.com/in/zack-ristov/", email: "contact@datamatrixiq.com", phone: "+61 449 602 007", bio: "Zack is a Co-Founder and Director at DataMatrixIQ, bringing over 20 years of experience in business development, IT consultancy, and project management. He holds an MBA from RMIT University and is instrumental in driving the company's growth and client satisfaction strategies across Australia and New Zealand." },
     { id: "alan-jennings", name: "Alan Jennings", role: "Presales Director", desc: "Manages regional operations and client relationships in New Zealand.", img: "https://datamatrixiq.com/media/k0gguotm/profile_4-1-removebg-preview.jpg", linkedin: "https://www.linkedin.com/in/jenningsa/", email: "contact@datamatrixiq.com", phone: "+61 451 110 993", bio: "Alan brings extensive expertise in presales strategy and client relationship management. With a strong focus on the New Zealand market, he bridges the gap between complex technical solutions and business objectives, ensuring clients receive tailored, high-impact data strategies." },
     { id: "emiliano-giovannoni", name: "Emiliano Giovannoni", role: "Principal Consultant Partner, Australia", desc: "Leads brand positioning and demand generation initiatives.", img: "https://datamatrixiq.com/media/npjplt2j/profile2.png", linkedin: "https://www.linkedin.com/in/emilianogiovannoni/", email: "contact@datamatrixiq.com", phone: "+61 451 110 993", bio: "Emiliano is a strategic consultant focused on market growth and branding. He partners with DataMatrixIQ to drive regional expansion in Australia, leveraging his deep understanding of demand generation and enterprise solution positioning." },
     { id: "venkat-valappady", name: "Venkat Valappady", role: "Principal Data Governance Consultant", desc: "Builds and supports data solutions to meet business needs.", img: "https://datamatrixiq.com/media/jebpbnka/linkedin-new-111.png", linkedin: "https://www.linkedin.com/in/venkatvv/", email: "contact@datamatrixiq.com", phone: "+61 451 110 993", bio: "Venkat specializes in data governance, security, and compliance. He ensures that DataMatrixIQ's clients can trust their data through robust framework implementations, rigorous quality standards, and intelligent lineage tracking." }
@@ -558,8 +558,8 @@ const TeamProfilePage = () => {
   const { id } = useParams()
   const team = [
     { id: "shalu-mahawal", name: "Shalu Mahawal", role: "Co-Founder & Australia Head", img: "https://datamatrixiq.com/media/le2bbmm0/profile1.png", linkedin: "https://www.linkedin.com/in/mahawals/", email: "contact@datamatrixiq.com", phone: "+61 451 110 993", bio: "Shalu's bio - Cofounder and Marketing Specialist with 25+ years of experience across customer service, marketing, customer care, and account management across the UK, New Zealand, and Australia. Specializes in IT solution sales and support, including CRM/CSM platforms, Salesforce, hosting, and data-driven solutions.<br><br>Known for consultative selling, account growth, and multi-team project coordination, and for building long-term client partnerships that drive measurable business outcomes. As Cofounder, leads teams and helps define and execute the strategic vision and growth roadmap for DataMatrixIQ." },
-    { id: "Zack ristov", name: "Zack Ristov", role: "Principal Data Consultant", img: "", linkedin: "https://www.linkedin.com/in/zack-ristov/", email: "contact@datamatrixiq.com", phone: "+61 449 602 007", bio: "Technology strategist with 25+ years of experience helping businesses and MSPs drive growth through AI, automation, and scalable platforms. Focused on improving efficiency, enabling digital transformation, and building strong partner ecosystems to deliver real business outcomes." },
     { id: "harsha-mahawal", name: "Harsha Mahawal", role: "Principal Data Consultant", img: "https://datamatrixiq.com/media/44gd51ch/profile_2.png", linkedin: "https://www.linkedin.com/in/harshamahawal/", email: "contact@datamatrixiq.com", phone: "+61 451 110 993", bio: "Harsha is a veteran data consultant specializing in large-scale data architecture and analytics. He leads technical delivery across Australia and New Zealand, helping enterprises unlock the power of their data through modern cloud platforms and intelligent automation." },
+    { id: "zack-ristov", name: "Zack Ristov", role: "Co-Founder & Director", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop", linkedin: "https://www.linkedin.com/in/zack-ristov/", email: "contact@datamatrixiq.com", phone: "+61 449 602 007", bio: "Zack is a Co-Founder and Director at DataMatrixIQ, bringing over 20 years of experience in business development, IT consultancy, and project management. He holds an MBA from RMIT University and is instrumental in driving the company's growth and client satisfaction strategies across Australia and New Zealand." },
     { id: "alan-jennings", name: "Alan Jennings", role: "Presales Director", img: "https://datamatrixiq.com/media/k0gguotm/profile_4-1-removebg-preview.jpg", linkedin: "https://www.linkedin.com/in/jenningsa/", email: "contact@datamatrixiq.com", phone: "+61 451 110 993", bio: "Alan brings extensive expertise in presales strategy and client relationship management. With a strong focus on the New Zealand market, he bridges the gap between complex technical solutions and business objectives, ensuring clients receive tailored, high-impact data strategies." },
     { id: "emiliano-giovannoni", name: "Emiliano Giovannoni", role: "Principal Consultant Partner, Australia", img: "https://datamatrixiq.com/media/npjplt2j/profile2.png", linkedin: "https://www.linkedin.com/in/emilianogiovannoni/", email: "contact@datamatrixiq.com", phone: "+61 451 110 993", bio: "Emiliano is a strategic consultant focused on market growth and branding. He partners with DataMatrixIQ to drive regional expansion in Australia, leveraging his deep understanding of demand generation and enterprise solution positioning." },
     { id: "venkat-valappady", name: "Venkat Valappady", role: "Principal Data Governance Consultant", img: "https://datamatrixiq.com/media/jebpbnka/linkedin-new-111.png", linkedin: "https://www.linkedin.com/in/venkatvv/", email: "contact@datamatrixiq.com", phone: "+61 451 110 993", bio: "Venkat specializes in data governance, security, and compliance. He ensures that DataMatrixIQ's clients can trust their data through robust framework implementations, rigorous quality standards, and intelligent lineage tracking." }
@@ -1159,6 +1159,7 @@ const ServicesPage = ({ onOpenModal }) => {
       subtitle: "Data Engineering",
       desc: "Transform your data ecosystem into a high-performance, governed, and insight-driven powerhouse. We architect modern data solutions that satisfy today's reporting needs while powering tomorrow's AI innovation.",
       items: ["Enterprise Data Strategy & Governance", "ETL/ELT Pipeline Automation", "Modern Data Platforms (Snowflake, Databricks, BigQuery)"],
+      img: "media__1774686486809.png",
       icon: <Database />,
       bg: "bg-[#f3f9ff]"
     },
@@ -1168,6 +1169,7 @@ const ServicesPage = ({ onOpenModal }) => {
       subtitle: "AI & ML Solutions",
       desc: "Go beyond basic analytics. We help enterprises embed intelligence directly into their operations through scalable machine learning models and generative AI frameworks.",
       items: ["Predictive Analytics & Forecasting", "Natural Language Processing (NLP)", "Generative AI & LLM Integration"],
+      img: "media__1774686464129.png",
       icon: <Cpu />,
       bg: "bg-white"
     },
@@ -1177,6 +1179,7 @@ const ServicesPage = ({ onOpenModal }) => {
       subtitle: "Application Modernization",
       desc: "Upgrade legacy systems into modern, agile, and cloud-ready applications — engineered for speed, security, and scalability. We help you transition from monolithic architectures to high-performance microservices.",
       items: ["Cloud Native App Development", "Monolith to Microservices Transition", "CI/CD & DevSecOps Implementation"],
+      img: "media__1774686509364.png",
       icon: <RefreshCcw />,
       bg: "bg-[#f3f9ff]"
     },
@@ -1186,6 +1189,7 @@ const ServicesPage = ({ onOpenModal }) => {
       subtitle: "Salesforce Data Engineering",
       desc: "Unify customer data across every touchpoint with Salesforce Data Cloud, enabling real-time insights, personalization, and smarter engagement powered by AI-driven analytics.",
       items: ["Salesforce Data Cloud Implementation", "Tableau & CRM Analytics Integration", "Intelligent Automation within Salesforce"],
+      img: "media__1774686498606.png",
       icon: <Cloud />,
       bg: "bg-white"
     },
@@ -1195,25 +1199,8 @@ const ServicesPage = ({ onOpenModal }) => {
       subtitle: "Cloud & Cybersecurity",
       desc: "Build secure, scalable, and compliant cloud environments that empower digital transformation. We ensure your infrastructure is not just powerful, but also protected by the highest security standards.",
       items: ["Enterprise Landing Zone (ELZ) Setup", "Multi-Cloud Migration & Management", "Proactive Security & Compliance Frameworks"],
+      img: "media__1774686475895.png",
       icon: <Workflow />,
-      bg: "bg-[#f3f9ff]"
-    },
-    {
-      id: "integration",
-      title: "Connect. Automate. Scale.",
-      subtitle: "Enterprise Integration",
-      desc: "Break silos and enable real-time connectivity across your business ecosystem. We build the bridges between your systems to ensure data flows where it's needed most.",
-      items: ["API-Led Lifecycle Management", "Hybrid & Multi-Cloud Connectivity", "Event-Driven Architecture Implementation"],
-      icon: <Zap />,
-      bg: "bg-white"
-    },
-    {
-      id: "bi-analytics",
-      title: "Turn Data into Strategy.",
-      subtitle: "BI & Analytics",
-      desc: "Empower decision-makers with interactive BI tools and AI-enhanced analytics. We bridge the gap between complex raw data and actionable strategic insights.",
-      items: ["Power BI, Tableau & Sigma Excellence", "Interactive Executive Dashboards", "Operational & Self-Service Analytics"],
-      icon: <BarChart3 />,
       bg: "bg-[#f3f9ff]"
     }
   ]
@@ -1300,14 +1287,10 @@ const ServicesPage = ({ onOpenModal }) => {
                   whileInView={{ scale: 1, opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8 }}
-                  className="w-[80%] aspect-square bg-white rounded-[4rem] shadow-2xl flex items-center justify-center border-8 border-gray-50 relative overflow-hidden group"
+                  className="w-full aspect-video bg-white rounded-[4rem] shadow-2xl flex items-center justify-center border-8 border-gray-50 relative overflow-hidden group"
                 >
-                  <div className="text-[#0c67c4] opacity-5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[15] transform rotate-12 transition-transform duration-1000 group-hover:rotate-0">
-                    {sec.icon}
-                  </div>
-                  <div className="text-[#0c67c4] scale-[4] z-10 transition-transform duration-500 group-hover:scale-[4.5]">
-                    {sec.icon}
-                  </div>
+                  <img src={sec.img} alt={sec.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-[#0c67c4]/10 group-hover:bg-transparent transition-colors" />
                 </motion.div>
               </div>
             </div>
