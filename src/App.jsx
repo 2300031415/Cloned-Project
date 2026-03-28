@@ -285,13 +285,13 @@ const Navbar = ({ onOpenModal }) => {
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
             className="fixed inset-0 top-[70px] bg-white z-[900] lg:hidden overflow-y-auto"
           >
-            <div className="p-8 flex flex-col gap-8">
-              <Link to="/services" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-[#2d465e] font-nunito border-b border-gray-100 pb-4">Services</Link>
-              <Link to="/about-us" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-[#2d465e] font-nunito border-b border-gray-100 pb-4">About Us</Link>
-              <Link to="/industries" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-[#2d465e] font-nunito border-b border-gray-100 pb-4">Industries</Link>
-              <Link to="/clients" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-[#2d465e] font-nunito border-b border-gray-100 pb-4">Clients</Link>
-              <Link to="/core-capabilities" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-[#2d465e] font-nunito border-b border-gray-100 pb-4">Capabilities</Link>
-              <Link to="/contact-us" onClick={() => setIsMobileMenuOpen(false)} className="bg-[#0c67c4] text-white py-5 rounded-2xl font-bold text-xl text-center shadow-lg mt-4">Book a Call</Link>
+            <div className="p-8 flex flex-col gap-6 items-center text-center">
+              <Link to="/services" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-[#2d465e] font-nunito border-b border-gray-100 pb-4 w-full">Services</Link>
+              <Link to="/about-us" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-[#2d465e] font-nunito border-b border-gray-100 pb-4 w-full">About Us</Link>
+              <Link to="/industries" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-[#2d465e] font-nunito border-b border-gray-100 pb-4 w-full">Industries</Link>
+              <Link to="/clients" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-[#2d465e] font-nunito border-b border-gray-100 pb-4 w-full">Clients</Link>
+              <Link to="/core-capabilities" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-[#2d465e] font-nunito border-b border-gray-100 pb-4 w-full">Capabilities</Link>
+              <Link to="/contact-us" onClick={() => setIsMobileMenuOpen(false)} className="bg-[#0c67c4] text-white py-4 rounded-2xl font-bold text-xl text-center shadow-lg mt-4 w-full">Book a Call</Link>
             </div>
           </motion.div>
         )}
@@ -329,22 +329,22 @@ const HeroModal = ({ isOpen, onClose }) => (
 )
 
 const Hero = ({ onOpenModal }) => (
-  <section className="relative h-[650px] flex items-center justify-center overflow-hidden">
+  <section className="relative min-h-[600px] lg:h-[750px] flex items-center justify-center overflow-hidden">
     <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover">
       <source src="https://datamatrixiq.com/media/wbcfm4uw/home_banner_video12.mp4" type="video/mp4" />
     </video>
-    <div className="absolute inset-0 bg-[#0d1b2a]/40 z-10" />
-    <div className="container mx-auto px-6 relative z-20 text-white max-w-[1320px]">
+    <div className="absolute inset-0 bg-[#0d1b2a]/50 z-10" />
+    <div className="container mx-auto px-6 relative z-20 text-white max-w-[1320px] py-20">
       <motion.div initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.8 }} className="max-w-4xl">
-        <h1 className="text-[48px] font-bold !text-white leading-[1.2] mb-8 font-nunito tracking-tight pt-10">
+        <h1 className="text-[32px] md:text-[48px] lg:text-[64px] font-bold !text-white leading-[1.2] mb-6 md:mb-8 font-nunito tracking-tight pt-4 md:pt-10">
           Your AI-First Delivery Powerhouse for Data, Cloud & Digital Transformation
         </h1>
-        <p className="text-[20px] !text-white/90 mb-12 max-w-2xl font-roboto leading-[1.6]">
+        <p className="text-[16px] md:text-[20px] !text-white/90 mb-8 md:mb-12 max-w-2xl font-roboto leading-[1.6]">
           With data made simple, DataMatrixIQ paves the way to a scalable, smarter and more powerful data journey.
         </p>
-        <div className="flex gap-6 flex-wrap">
-          <Link to="/services" className="bg-[#0c67c4] text-white px-12 py-4 rounded-full font-bold text-lg shadow-2xl hover:bg-[#0a56a3] transition-all flex items-center justify-center">Learn More</Link>
-          <Link to="/contact-us" className="border-2 border-white/40 text-white px-12 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all flex items-center justify-center">Book a Call</Link>
+        <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
+          <Link to="/services" className="bg-[#0c67c4] text-white px-8 md:px-12 py-3.5 md:py-4 rounded-full font-bold text-base md:text-lg shadow-2xl hover:bg-[#0a56a3] transition-all flex items-center justify-center">Learn More</Link>
+          <Link to="/contact-us" className="border-2 border-white/40 text-white px-8 md:px-12 py-3.5 md:py-4 rounded-full font-bold text-base md:text-lg hover:bg-white/10 transition-all flex items-center justify-center">Book a Call</Link>
         </div>
       </motion.div>
     </div>
@@ -362,12 +362,12 @@ const ServicesPreview = () => {
     { title: "Enterprise Integration", desc: "Connect data, apps, and workflows for unified intelligence.", icon: <Workflow /> },
   ]
   return (
-    <section id="services" className="py-16 bg-gradient-to-b from-white to-[#f6f8fa]">
+    <section id="services" className="py-16 md:py-24 bg-gradient-to-b from-white to-[#f6f8fa]">
       <div className="container mx-auto px-6 max-w-[1320px]">
-        <h2 className="text-[32px] font-bold text-[#2d465e] mb-2 font-nunito flex justify-center">Empowering Enterprises Through Intelligent Solutions</h2>
-        <div className="w-14 h-[3px] bg-[#0c67c4] mx-auto my-4 mt-1"></div>
-        <p className="text-center text-[#212529] font-roboto text-[16px] leading-[1.6]">At DataMatrixIQ, we help organizations unlock the power of AI, data, and cloud to accelerate innovation, optimize operations, and drive sustainable growth.</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20">
+        <h2 className="text-[24px] md:text-[32px] font-bold text-[#2d465e] mb-4 font-nunito text-center">Empowering Enterprises Through Intelligent Solutions</h2>
+        <div className="w-14 h-[3px] bg-[#0c67c4] mx-auto mb-6"></div>
+        <p className="text-center text-[#212529] font-roboto text-[15px] md:text-[16px] leading-[1.6] max-w-3xl mx-auto">At DataMatrixIQ, we help organizations unlock the power of AI, data, and cloud to accelerate innovation, optimize operations, and drive sustainable growth.</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mt-12 md:mt-20">
           {services.map((s, i) => (
             <motion.div 
               key={i} 
@@ -402,12 +402,12 @@ const CapabilitySection = () => {
     { title: "BI & CRM Analytics", items: "Salesforce CRM, Power BI, Tableau, Sigma, CRM Analytics", icon: <BarChart3 size={40} /> },
   ]
   return (
-    <section id="capabilities" className="py-32 bg-white">
+    <section id="capabilities" className="py-20 md:py-32 bg-white">
       <div className="container mx-auto px-6 max-w-[1320px]">
-        <div className="text-center mb-16">
-          <h2 className="text-[32px] font-bold text-[#2d465e] mb-2 font-nunito">Technology & Tools</h2>
-          <div className="w-14 h-[3px] bg-[#0c67c4] mx-auto mb-10"></div>
-          <p className="text-[#212529] font-roboto text-[16px] leading-[1.6]">We build scalable and future-ready data platforms using today's most trusted tools:</p>
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-[24px] md:text-[32px] font-bold text-[#2d465e] mb-4 font-nunito">Technology & Tools</h2>
+          <div className="w-14 h-[3px] bg-[#0c67c4] mx-auto mb-8 md:mb-10"></div>
+          <p className="text-[#212529] font-roboto text-[15px] md:text-[16px] leading-[1.6]">We build scalable and future-ready data platforms using today's most trusted tools:</p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {tools.map((t, i) => (
@@ -441,12 +441,12 @@ const IndustriesGrid = () => {
     { title: "Mining", desc: "Data-driven mining for efficiency and sustainability.", icon: <Hammer /> },
   ]
   return (
-    <section id="industries" className="py-32 bg-[#f9fcff]">
+    <section id="industries" className="py-20 md:py-32 bg-[#f9fcff]">
       <div className="container mx-auto px-6 max-w-[1320px]">
-        <div className="text-center mb-16">
-          <h2 className="text-[32px] font-bold text-[#2d465e] mb-2 font-nunito">Transforming Industries with Data Intelligence</h2>
-          <div className="w-14 h-[3px] bg-[#0c67c4] mx-auto mb-10"></div>
-          <p className="text-[#212529] max-w-5xl mx-auto text-[16px] leading-[1.6] font-roboto">From energy to finance, retail to healthcare - DataMatrixIQ helps enterprises harness AI and data innovation to operate smarter, scale faster, and grow sustainably.</p>
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-[24px] md:text-[32px] font-bold text-[#2d465e] mb-4 font-nunito">Transforming Industries with Data Intelligence</h2>
+          <div className="w-14 h-[3px] bg-[#0c67c4] mx-auto mb-8 md:mb-10"></div>
+          <p className="text-[#212529] max-w-5xl mx-auto text-[15px] md:text-[16px] leading-[1.6] font-roboto">From energy to finance, retail to healthcare - DataMatrixIQ helps enterprises harness AI and data innovation to operate smarter, scale faster, and grow sustainably.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {industries.map((ind, i) => (
@@ -477,12 +477,12 @@ const PartnershipSection = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="text-center mb-24"
+        className="text-center mb-16 md:mb-24"
       >
-        <h2 className="text-[32px] font-bold text-[#2d465e] mb-4 font-nunito">Partnerships</h2>
+        <h2 className="text-[24px] md:text-[32px] font-bold text-[#2d465e] mb-4 font-nunito">Partnerships</h2>
         <div className="w-14 h-[3px] bg-[#0c67c4] mx-auto mb-8"></div>
-        <p className="text-[#0c67c4] font-bold text-[18px] mb-6 font-nunito tracking-wide">We believe strong partnerships amplify success</p>
-        <p className="text-[#212529] max-w-4xl mx-auto text-[16px] leading-[1.6] font-roboto">
+        <p className="text-[#0c67c4] font-bold text-[16px] md:text-[18px] mb-6 font-nunito tracking-wide">We believe strong partnerships amplify success</p>
+        <p className="text-[#212529] max-w-4xl mx-auto text-[15px] md:text-[16px] leading-[1.6] font-roboto">
           By working closely with our partners, we ensure our clients benefit from cutting-edge technology combined with trusted expertise. Our deep-rooted relationships with leading cloud providers and technology platforms allow us to deliver high-performance, future-ready solutions tailored to your unique business needs.
         </p>
       </motion.div>
@@ -514,12 +514,12 @@ const TeamSection = () => {
     { id: "venkat-valappady", name: "Venkat Valappady", role: "Principal Data Governance Consultant", desc: "Builds and supports data solutions to meet business needs.", img: "https://datamatrixiq.com/media/jebpbnka/linkedin-new-111.png", linkedin: "https://www.linkedin.com/in/venkatvv/", email: "contact@datamatrixiq.com", phone: "+61 451 110 993", bio: "Venkat specializes in data governance, security, and compliance. He ensures that DataMatrixIQ's clients can trust their data through robust framework implementations, rigorous quality standards, and intelligent lineage tracking." }
   ]
   return (
-    <section id="team" className="py-24 bg-white">
+    <section id="team" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-6 max-w-[1320px]">
-        <div className="text-center mb-16">
-          <p className="text-[#212529] font-roboto text-[18px] leading-[1.6]">The Data Matrix IQ team consists of skilled professionals including:</p>
+        <div className="text-center mb-12 flex justify-center">
+          <p className="text-[#212529] font-roboto text-[16px] md:text-[18px] leading-[1.6] max-w-2xl">The Data Matrix IQ team consists of skilled professionals including:</p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8 justify-center">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-y-12 md:gap-y-16 gap-x-8 justify-center">
           {team.map((m, i) => (
              <motion.div 
                key={i} 
@@ -626,18 +626,18 @@ const TeamProfilePage = () => {
 
 
 const AboutSection = ({ showTitle = true }) => (
-  <section id="about" className="py-32 bg-white">
+  <section id="about" className="py-20 md:py-32 bg-white">
     <div className="container mx-auto px-6 max-w-[1320px]">
-      <div className="grid lg:grid-cols-2 gap-24 items-center">
+      <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
         <div>
           {showTitle && (
-            <div className="mb-10">
-              <h2 className="text-[32px] font-bold text-[#2d465e] mb-2 font-nunito">About Us</h2>
+            <div className="mb-8 md:mb-10">
+              <h2 className="text-[24px] md:text-[32px] font-bold text-[#2d465e] mb-2 font-nunito">About Us</h2>
               <div className="w-14 h-[3px] bg-[#0c67c4]"></div>
             </div>
           )}
-          <h3 className="text-[32px] font-bold text-[#2d465e] mb-10 font-nunito">Who We Are</h3>
-          <p className="text-[16px] text-[#212529] mb-14 font-roboto leading-[1.6]">
+          <h3 className="text-[24px] md:text-[32px] font-bold text-[#2d465e] mb-6 md:mb-10 font-nunito">Who We Are</h3>
+          <p className="text-[15px] md:text-[16px] text-[#212529] mb-8 md:mb-14 font-roboto leading-[1.6]">
             DataMatrixIQ is a results-driven delivery powerhouse across Data Engineering, Salesforce, Cloud, and Cybersecurity, trusted to execute complex, high-value transformation programs end to end. We architect and operationalise modern, scalable data platforms that unify fragmented systems, strengthen data trust, and eliminate operational bottlenecks.
           </p>
           <div className="grid md:grid-cols-2 gap-12">
@@ -855,15 +855,15 @@ const CapabilitiesPage = ({ onOpenModal }) => {
               transition={{ duration: 0.8 }}
               className="lg:w-1/2"
             >
-              <h1 className="text-[48px] font-bold text-[#2d465e] mb-10 font-nunito leading-[1.2]">
-                Powering Data, Cloud & Digital <br /> <span className="text-[#0c67c4]">Transformation</span>
+              <h1 className="text-[32px] md:text-[48px] font-bold text-[#2d465e] mb-6 md:mb-10 font-nunito leading-[1.2]">
+                Powering Data, Cloud & Digital <br className="hidden md:block" /> <span className="text-[#0c67c4]">Transformation</span>
               </h1>
               <p className="text-[16px] text-[#212529] mb-12 font-roboto leading-[1.6] max-w-2xl">
                 At Data Matrix IQ, we help organizations modernize platforms, unify data, and build intelligent systems. Our capabilities span Data Engineering, Salesforce, Cloud, and DevOps, delivering measurable outcomes from strategy through execution.
               </p>
               <Link 
                 to="/contact-us"
-                className="bg-[#0c67c4] text-white px-16 py-5 rounded-full font-bold text-lg shadow-2xl hover:bg-[#0a56a3] transition-all active:scale-95 inline-block text-center"
+                className="bg-[#0c67c4] text-white px-10 md:px-16 py-3.5 md:py-5 rounded-full font-bold text-base md:text-lg shadow-2xl hover:bg-[#0a56a3] transition-all active:scale-95 inline-block text-center w-full sm:w-auto"
               >
                 Book a Call
               </Link>
@@ -894,7 +894,7 @@ const CapabilitiesPage = ({ onOpenModal }) => {
       {/* Core Capabilities Header */}
       <section className="py-20 bg-[#f8f9fa] border-b border-gray-100">
         <div className="container mx-auto px-6 max-w-[1320px] text-center">
-          <h2 className="text-[32px] font-bold text-[#2d465e] mb-6 font-nunito">Core Capabilities</h2>
+          <h2 className="text-[24px] md:text-[32px] font-bold text-[#2d465e] mb-4 md:mb-6 font-nunito">Core Capabilities</h2>
           <p className="text-[16px] text-[#212529] font-roboto max-w-3xl mx-auto italic leading-[1.6]">
             Empowering your digital transformation with specialized engineering and strategic platform management.
           </p>
@@ -950,7 +950,7 @@ const CapabilitiesPage = ({ onOpenModal }) => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-[3.5rem] font-bold mb-6 font-nunito text-[#0c67c4]">Single Source of Truth</h2>
+            <h2 className="text-[32px] md:text-[3.5rem] font-bold mb-6 font-nunito text-[#0c67c4]">Single Source of Truth</h2>
             <p className="text-2xl mb-16 font-roboto max-w-4xl mx-auto font-medium">
               We connect Salesforce + Snowflake + Data Cloud to create a unified data ecosystem.
             </p>
@@ -978,7 +978,7 @@ const CapabilitiesPage = ({ onOpenModal }) => {
         <div className="container mx-auto px-6 max-w-[1320px]">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2">
-              <h2 className="text-[32px] font-bold text-[#2d465e] mb-6 font-nunito leading-tight">Engagement Models</h2>
+              <h2 className="text-[24px] md:text-[32px] font-bold text-[#2d465e] mb-6 font-nunito leading-tight">Engagement Models</h2>
               <p className="text-[16px] text-[#212529] mb-10 font-roboto leading-[1.6]">Choose how you work with us:</p>
               <ul className="space-y-6">
                 {[
@@ -1008,7 +1008,7 @@ const CapabilitiesPage = ({ onOpenModal }) => {
         <div className="container mx-auto px-6 max-w-[1320px]">
           <div className="flex flex-col lg:flex-row-reverse items-center gap-16">
             <div className="lg:w-1/2">
-              <h2 className="text-[3rem] font-bold text-[#2d465e] mb-4 font-nunito leading-tight">Our Delivery Advantage</h2>
+              <h2 className="text-[28px] md:text-[3rem] font-bold text-[#2d465e] mb-4 font-nunito leading-tight">Our Delivery Advantage</h2>
               <p className="text-xl text-[#0c67c4] font-bold mb-10 font-roboto">Local Strategy. Global Scale.</p>
               <ul className="space-y-6">
                 {[
@@ -1034,7 +1034,7 @@ const CapabilitiesPage = ({ onOpenModal }) => {
       {/* Ready to Build What’s Next */}
       <section className="py-32 bg-[#011d2e] text-white text-center">
         <div className="container mx-auto px-6 max-w-[1320px]">
-          <h2 className="text-[3rem] lg:text-[4rem] font-bold mb-8 font-nunito">Ready to Build What’s Next?</h2>
+          <h2 className="text-[28px] md:text-[3rem] lg:text-[4rem] font-bold mb-6 md:mb-8 font-nunito">Ready to Build What’s Next?</h2>
           <p className="text-2xl text-white/80 font-roboto max-w-4xl mx-auto mb-16 leading-relaxed">
             Partner with Data Matrix IQ to modernize your data and digital platforms. Let’s transform your business with intelligent technology.
           </p>
@@ -1211,20 +1211,20 @@ const ServicesPage = ({ onOpenModal }) => {
         <div className="container mx-auto px-6 max-w-[1320px] relative z-20">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <motion.div initial={{ x: -20, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.6 }} className="lg:w-7/12">
-              <h1 className="text-[48px] font-bold text-[#2d465e] mb-8 font-nunito leading-[1.2]">
+              <h1 className="text-[32px] md:text-[48px] font-bold text-[#2d465e] mb-6 md:mb-8 font-nunito leading-[1.2]">
                 AI-First Data and Salesforce Engineering - Built for Scale, Intelligence, and Growth
               </h1>
               <p className="text-[16px] text-[#212529] max-w-4xl mb-12 font-roboto leading-[1.6]">
                 DataMatrixIQ empowers enterprises with intelligent data, AI, and cloud-driven solutions - transforming operations, decisions, and outcomes.
               </p>
-              <div className="flex gap-6 flex-wrap">
+              <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
                 <button 
                   onClick={() => { document.getElementById('snapshot').scrollIntoView({ behavior: 'smooth' }) }} 
-                  className="bg-[#0c67c4] text-white px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:bg-blue-600 transition-all"
+                  className="bg-[#0c67c4] text-white px-8 md:px-10 py-3.5 md:py-4 rounded-full font-bold text-base md:text-lg shadow-xl hover:bg-blue-600 transition-all text-center w-full sm:w-auto"
                 >
                   Explore Our Capabilities
                 </button>
-                <button onClick={onOpenModal} className="bg-[#0c67c4] text-white px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:bg-blue-600 transition-all">Book a Call</button>
+                <button onClick={onOpenModal} className="bg-[#0c67c4] text-white px-8 md:px-10 py-3.5 md:py-4 rounded-full font-bold text-base md:text-lg shadow-xl hover:bg-blue-600 transition-all text-center w-full sm:w-auto">Book a Call</button>
               </div>
             </motion.div>
             <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.8 }} className="lg:w-5/12 flex justify-center">
@@ -1240,7 +1240,7 @@ const ServicesPage = ({ onOpenModal }) => {
       <section id="snapshot" className="py-32 bg-white">
         <div className="container mx-auto px-6 max-w-[1320px]">
           <div className="text-center mb-24">
-            <h2 className="text-[32px] font-bold text-[#2d465e] mb-6 font-nunito">Quick Services Snapshot</h2>
+            <h2 className="text-[24px] md:text-[32px] font-bold text-[#2d465e] mb-4 md:mb-6 font-nunito">Quick Services Snapshot</h2>
             <div className="w-14 h-[3px] bg-[#0c67c4] mx-auto mb-10"></div>
             <p className="text-[#212529] text-[16px] max-w-2xl mx-auto font-roboto leading-[1.6]">An instant overview of our service pillars - engineered for the modern enterprise.</p>
           </div>
@@ -1257,7 +1257,7 @@ const ServicesPage = ({ onOpenModal }) => {
       </section>
 
       {detailedSections.map((sec, i) => (
-        <section key={sec.id} className={cn("py-32", sec.bg)}>
+        <section key={sec.id} className={cn("py-20 md:py-32", sec.bg)}>
           <div className="container mx-auto px-6 max-w-[1320px]">
             <div className={cn("flex flex-col lg:flex-row items-center gap-20", i % 2 !== 0 && "lg:flex-row-reverse")}>
               <motion.div 
@@ -1270,7 +1270,7 @@ const ServicesPage = ({ onOpenModal }) => {
                 <div className="text-[#0c67c4] mb-6 font-bold uppercase tracking-widest text-sm font-inter flex items-center gap-3">
                   <span className="w-8 h-[2px] bg-[#0c67c4]"></span> {sec.subtitle}
                 </div>
-                <h2 className="text-[32px] font-bold text-[#2d465e] mb-8 font-nunito leading-[1.4]">{sec.title}</h2>
+                <h2 className="text-[24px] md:text-[32px] font-bold text-[#2d465e] mb-6 md:mb-8 font-nunito leading-[1.4]">{sec.title}</h2>
                 <p className="text-[#212529] text-[16px] leading-[1.6] mb-10 font-roboto">{sec.desc}</p>
                 <ul className="space-y-6">
                   {sec.items.map((item, idx) => (
@@ -1300,7 +1300,7 @@ const ServicesPage = ({ onOpenModal }) => {
       
       <section className="py-32 bg-[#0c67c4] text-white">
         <div className="container mx-auto px-6 max-w-[1320px] text-center">
-          <h2 className="text-[32px] lg:text-[48px] font-bold mb-10 font-nunito leading-[1.2] !text-white">Empower Your Business <br /> with Data Intelligence.</h2>
+          <h2 className="text-[28px] md:text-[32px] lg:text-[48px] font-bold mb-8 md:mb-10 font-nunito leading-[1.2] !text-white">Empower Your Business <br className="hidden md:block" /> with Data Intelligence.</h2>
           <p className="text-[20px] opacity-90 mb-14 max-w-3xl mx-auto font-roboto leading-[1.6] !text-white">
             From strategy to execution, DataMatrixIQ enables enterprises to scale smarter, innovate faster, and sustain success through data and AI.
           </p>
@@ -1329,7 +1329,7 @@ const ClientsPage = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-24"
           >
-              <h2 className="text-[32px] font-bold text-[#2d465e] mb-10 font-nunito leading-[1.2]">Trusted by Forward-Thinking Organizations</h2>
+              <h2 className="text-[24px] md:text-[32px] font-bold text-[#2d465e] mb-6 md:mb-10 font-nunito leading-[1.2] text-center">Trusted by Forward-Thinking Organizations</h2>
               <p className="text-[16px] text-[#212529] max-w-4xl mx-auto mb-20 font-roboto leading-[1.6]">
                 At DataMatrixIQ, we’re proud to partner with ambitious businesses across industries, helping them unlock the power of data, cloud, and AI to drive measurable outcomes.
               </p>
@@ -1351,7 +1351,7 @@ const ClientsPage = () => {
         <div className="container mx-auto px-6 max-w-[1320px]">
           <div className="grid lg:grid-cols-2 gap-24 items-center">
             <div>
-              <h2 className="text-[32px] font-bold text-[#2d465e] mb-12 font-nunito leading-[1.2]">Why Clients Choose DataMatrixIQ</h2>
+              <h2 className="text-[24px] md:text-[32px] font-bold text-[#2d465e] mb-8 md:mb-12 font-nunito leading-[1.2]">Why Clients Choose DataMatrixIQ</h2>
               <div className="space-y-12">
                 {[
                   { title: "Deep Engineering Expertise", desc: "Specialists in Data & AI engineering, Snowflake, Salesforce, and Cloud platforms (AWS, Azure, GCP)." },
@@ -1414,7 +1414,7 @@ const ContactPage = () => {
       <section className="py-24 overflow-hidden relative">
         <div className="container mx-auto px-6 max-w-[1320px] text-center mb-16 pt-10">
           <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6 }}>
-            <h1 className="text-[48px] font-bold text-[#2d465e] mb-6 font-nunito">Contact</h1>
+            <h1 className="text-[36px] md:text-[48px] font-bold text-[#2d465e] mb-6 font-nunito">Contact</h1>
             <p className="text-[16px] text-[#212529] max-w-4xl mx-auto font-roboto leading-[1.6]">
               Let's start a conversation about your goals.Our experts are ready to deliver measurable results.
             </p>
@@ -1502,8 +1502,8 @@ const ContactPage = () => {
 const ScheduleACall = ({ onOpenModal }) => (
   <section className="bg-white pb-24 border-t border-gray-100">
     <div className="container mx-auto px-6 max-w-[1320px]">
-      <div className="bg-[#0c67c4] text-white p-24 rounded-[4rem] text-center shadow-2xl relative overflow-hidden">
-        <h2 className="text-[48px] font-bold mb-8 font-nunito !text-white">Schedule a Call</h2>
+      <div className="bg-[#0c67c4] text-white p-10 md:p-24 rounded-[2.5rem] md:rounded-[4rem] text-center shadow-2xl relative overflow-hidden">
+        <h2 className="text-[32px] md:text-[48px] font-bold mb-6 md:mb-8 font-nunito !text-white">Schedule a Call</h2>
         <p className="max-w-4xl mx-auto mb-14 text-[20px] opacity-90 leading-[1.6] font-roboto !text-white">Let’s Build Your Data Foundation Together. Struggling with slow insights, outdated pipelines, or disconnected platforms? Let’s design a solution that scales.</p>
         <Link 
           to="/contact-us" 
@@ -1566,23 +1566,23 @@ const IndustriesPage = () => {
               transition={{ duration: 0.8 }}
               className="lg:w-[60%]"
             >
-              <h1 className="text-[48px] font-bold text-[#2d465e] mb-10 font-nunito leading-[1.2] tracking-tight">
+              <h1 className="text-[32px] md:text-[48px] font-bold text-[#2d465e] mb-6 md:mb-10 font-nunito leading-[1.2] tracking-tight">
                 Intelligence That Transforms <br className="hidden lg:block" /> Every Industry.
               </h1>
               <p className="text-[16px] text-[#212529] mb-14 font-roboto leading-[1.6] max-w-2xl">
                 From energy to healthcare, from retail to finance — we bring AI and data-driven innovation that fuels growth, resilience, and sustainability.
               </p>
-              <div className="flex flex-wrap gap-6">
+              <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
                 <a 
                   href="#industries-grid" 
                   onClick={e => { e.preventDefault(); document.getElementById('industries-grid')?.scrollIntoView({ behavior: 'smooth' }) }} 
-                  className="bg-[#0c67c4] text-white px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:bg-blue-600 transition-all flex items-center gap-2 group"
+                  className="bg-[#0c67c4] text-white px-8 md:px-10 py-3.5 md:py-4 rounded-full font-bold text-base md:text-lg shadow-xl hover:bg-blue-600 transition-all flex items-center justify-center gap-2 group w-full sm:w-auto"
                 >
                   Explore Industries <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                 </a>
                 <Link 
                   to="/contact-us" 
-                  className="border-2 border-[#0c67c4] text-[#0c67c4] px-10 py-4 rounded-full font-bold text-lg hover:bg-[#0c67c4] hover:text-white transition-all shadow-md"
+                  className="border-2 border-[#0c67c4] text-[#0c67c4] px-8 md:px-10 py-3.5 md:py-4 rounded-full font-bold text-base md:text-lg hover:bg-[#0c67c4] hover:text-white transition-all shadow-md text-center w-full sm:w-auto"
                 >
                   Book a Call
                 </Link>
@@ -1612,10 +1612,10 @@ const IndustriesPage = () => {
       </section>
 
       {/* Intelligence Everywhere Grid */}
-      <section id="industries-grid" className="py-32 bg-[#f3f9ff]">
+      <section id="industries-grid" className="py-20 md:py-32 bg-[#f3f9ff]">
         <div className="container mx-auto px-6 max-w-[1320px]">
           <div className="text-center mb-20">
-            <h2 className="text-[32px] font-bold text-[#2d465e] mb-4 font-nunito">Intelligence Everywhere</h2>
+            <h2 className="text-[24px] md:text-[32px] font-bold text-[#2d465e] mb-4 font-nunito">Intelligence Everywhere</h2>
             <div className="w-14 h-[3px] bg-[#0c67c4] mx-auto mb-8" />
             <p className="text-[#212529] max-w-3xl mx-auto text-[16px] leading-[1.6] font-roboto">11 industries — one unified approach to intelligence.</p>
           </div>
@@ -1641,7 +1641,7 @@ const IndustriesPage = () => {
       </section>
 
       {/* Featured Industries Slider */}
-      <section className="py-32 bg-white">
+      <section className="py-20 md:py-32 bg-white">
         <div className="container mx-auto px-6 max-w-[1320px]">
           <div className="flex items-end justify-between mb-16">
             <motion.div 
@@ -1650,7 +1650,7 @@ const IndustriesPage = () => {
                viewport={{ once: true }}
                transition={{ duration: 0.8 }}
             >
-              <h2 className="text-[32px] font-bold text-[#2d465e] mb-4 font-nunito">Featured Industries</h2>
+              <h2 className="text-[24px] md:text-[32px] font-bold text-[#2d465e] mb-4 font-nunito">Featured Industries</h2>
               <div className="w-14 h-[3px] bg-[#0c67c4] mb-4" />
               <p className="text-[#212529] font-roboto text-[16px]">Transforming Industries with Data Intelligence</p>
             </motion.div>
@@ -1675,7 +1675,7 @@ const IndustriesPage = () => {
       </section>
 
       {/* Why DataMatrixIQ */}
-      <section className="py-32 bg-[#f3f9ff]">
+      <section className="py-20 md:py-32 bg-[#f3f9ff]">
         <div className="container mx-auto px-6 max-w-[1320px]">
           <div className="grid lg:grid-cols-2 gap-24 items-center">
             <motion.div 
@@ -1684,7 +1684,7 @@ const IndustriesPage = () => {
                viewport={{ once: true }}
                transition={{ duration: 0.8 }}
             >
-              <h2 className="text-[32px] font-bold text-[#2d465e] mb-8 font-nunito leading-[1.2]">Why Global Enterprises Choose DataMatrixIQ</h2>
+              <h2 className="text-[24px] md:text-[32px] font-bold text-[#2d465e] mb-6 md:mb-8 font-nunito leading-[1.2]">Why Global Enterprises Choose DataMatrixIQ</h2>
               <p className="text-[#212529] text-[16px] mb-12 font-roboto leading-[1.6]">
                 Deep industry understanding combined with AI innovation. Proven accelerators for faster deployment. Secure, scalable, cloud-first architecture. Commitment to ethical AI and sustainability.
               </p>
@@ -1718,9 +1718,9 @@ const IndustriesPage = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-32 bg-gradient-to-r from-[#0d1b2a] to-[#0c67c4] text-white">
+      <section className="py-20 md:py-32 bg-gradient-to-r from-[#0d1b2a] to-[#0c67c4] text-white">
         <div className="container mx-auto px-6 max-w-[1320px] text-center">
-          <h2 className="text-[48px] font-bold mb-8 font-nunito leading-[1.2] !text-white">Let's Redefine What's Possible<br />in Your Industry.</h2>
+          <h2 className="text-[32px] md:text-[48px] font-bold mb-6 md:mb-8 font-nunito leading-[1.2] !text-white">Let's Redefine What's Possible<br className="hidden md:block" />in Your Industry.</h2>
           <p className="text-[18px] opacity-80 mb-14 max-w-2xl mx-auto font-roboto leading-[1.6] !text-white">
             Partner with DataMatrixIQ to harness data, AI, and innovation that transform performance, sustainability, and growth.
           </p>
