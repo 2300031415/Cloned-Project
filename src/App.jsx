@@ -187,11 +187,11 @@ const Navbar = ({ onOpenModal }) => {
                     exit={{ opacity: 0, y: 15 }} 
                     className="absolute top-[90%] left-0 md:left-[-20px] w-[1100px] bg-white shadow-[0_10px_60px_rgba(0,0,0,0.1)] rounded-2xl flex p-6 border border-gray-100 z-[1100]"
                   >
-                    <div className="w-[400px] bg-[#f3f9ff] rounded-xl p-3 flex flex-col gap-1.5 h-[500px]">
+                    <div className="w-[400px] shrink-0 bg-[#f3f9ff] rounded-xl p-3 flex flex-col gap-1.5 h-[500px]">
                       {servicesData.map((s, i) => (
-                        <button key={i} onMouseEnter={() => setActiveTab(i)} className={cn("w-full text-left px-3.5 py-3.5 rounded-xl transition-all font-bold text-[13px] relative flex items-center min-h-[64px]", activeTab === i ? "bg-white text-[#0c67c4] shadow-sm" : "text-[#495057] hover:bg-white/50")}>
-                          <span className="leading-[1.3] pr-6 block">{s.title}</span> 
-                          {activeTab === i && <ChevronRight size={14} className="absolute right-3.5 top-1/2 -translate-y-1/2 shrink-0" />}
+                        <button key={i} onMouseEnter={() => setActiveTab(i)} className={cn("w-full text-left px-4 py-3.5 rounded-xl transition-all font-bold text-[14px] relative flex items-center min-h-[64px]", activeTab === i ? "bg-white text-[#0c67c4] shadow-sm" : "text-[#495057] hover:bg-white/50")}>
+                          <span className="leading-[1.4] pr-10 block">{s.title}</span> 
+                          {activeTab === i && <ChevronRight size={14} className="absolute right-4 top-1/2 -translate-y-1/2 shrink-0" />}
                         </button>
                       ))}
                     </div>
