@@ -53,6 +53,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 import { Routes, Route, Link, useLocation, useNavigate, useParams } from 'react-router-dom'
+import { title } from 'framer-motion/client'
 
 function cn(...inputs) {
   return twMerge(clsx(inputs))
@@ -82,9 +83,9 @@ const Navbar = ({ onOpenModal }) => {
         { title: "Predictive Maintenance", desc: "Reduce downtime and extend asset life with AI-driven maintenance strategies." }
       ]
     },
-    { title: "Artificial Intelligence (AI) / Machine Learning (ML)", content: [{ title: "Generative AI", desc: "Harness LLMs for automation." }, { title: "Custom ML Models", desc: "Tailored algorithms for specific needs." }] },
-    { title: "Business Intelligence", content: [{ title: "Visual Dashboards", desc: "Insights that matter." }, { title: "Strategic BI", desc: "Data-driven leadership solutions." }] },
-    { title: "Salesforce", content: [{ title: "CRM Excellence", desc: "Sales cloud and automation." }, { title: "Salesforce Analytics", desc: "Unlock sales insights." }] },
+    { title: "Artificial Intelligence (AI) / Machine Learning (ML)", content: [{ title: "Generative AI", desc: "Harness LLMs for automation." }, { title: "Custom ML Models", desc: "Tailored algorithms for specific needs." },{title : "Custom AI Development", desc: "Smart conversational interfaces that leverage AI to deliver human-like interactions, automate customer engagement, and provide real-time support across multiple platforms, improving user experience and operational efficiency. "},{title : "Advanced Solutions", desc: "Tailored machine learning models designed to address specific business challenges, enabling intelligent automation, accurate predictions, and scalable solutions aligned with your unique goals and data."}] },
+    { title: "Business Intelligence", content: [{ title: "Visual Dashboards", desc: "Insights that matter." }, { title: "Strategic BI", desc: "Data-driven leadership solutions." },{title:"Data Visualization & Reporting", desc: "Create interactive dashboards and detailed reports that simplify complex data, enabling stakeholders to quickly understand insights and make informed decisions."},{title:"Predictive Analytics", desc: "Leverage historical data and advanced algorithms to forecast future trends, identify risks, and optimize decision-making for better business outcomes. "}] },
+    { title: "Salesforce", content: [{ title: "CRM Excellence", desc: "Sales cloud and automation." }, { title: "Salesforce Analytics", desc: "Unlock sales insights." },{title:"CRM Implementation & Customization", desc: "Design and implement tailored Salesforce solutions that align with business processes, improving customer management and operational efficiency."},{title:"Sales & Service Automation", desc: "Automate workflows, lead management, and customer support processes to enhance productivity, reduce manual effort, and improve customer experience."}] },
     { 
       title: "Application Modernization", 
       content: [
