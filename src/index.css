@@ -1,4 +1,9 @@
-@import 'aos/dist/aos.css';
+/* 
+  DataMatrixIQ Foundation
+  Exact CSS/Font mapping from datamatrixiq.com
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,44 +11,60 @@
 
 :root {
   /* Brand palette from datamatrixiq.com source */
-  --primary: #0c67c4;
-  --primary-glow: rgba(12, 103, 196, 0.15);
-  --secondary: #2d465e;
-  --accent: #0d83fd;
-  --background: #ffffff;
+  --primary: #0c67c4; /* Main Brand */
+  --accent: #0d83fd;  /* Interaction / CTAs */
+  --secondary: #2d465e; /* Headings */
   --surface: #f3f9ff;
-  --text-default: #212529;
+  --text-default: #212529; /* Body copy */
   --text-muted: #5f6f7d;
   
-  --default-font: 'Roboto', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --default-font: 'Roboto', sans-serif;
   --heading-font: 'Nunito', sans-serif;
   --nav-font: 'Inter', sans-serif;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  font-family: var(--default-font);
-  color: var(--text-default);
-  background-color: var(--background);
+@layer base {
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: var(--default-font); /* Roboto 16px */
+    color: var(--text-default);
+    background-color: #ffffff;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font); /* Nunito */
+    color: var(--secondary);
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  h1 { font-size: 48px; }
+  h2 { font-size: 32px; }
+
+  a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--heading-font);
-  color: var(--secondary);
-  font-weight: 700;
+/* Custom utilities */
+.bg-hero-gradient {
+  background: linear-gradient(135deg, #f3f9ff 0%, #ffffff 100%);
 }
 
-/* Base link behavior to match site */
-a {
-  color: var(--primary);
-  text-decoration: none;
-  transition: color 0.3s ease;
+.text-brand-gray {
+  color: #212529;
 }
 
-a:hover {
-  filter: brightness(1.2);
+.font-nav {
+  font-family: var(--nav-font); /* Inter */
 }
 
 /* Custom utilities */

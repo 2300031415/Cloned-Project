@@ -172,7 +172,7 @@ const Navbar = ({ onOpenModal }) => {
         </div>
 
         <nav className="hidden lg:block ml-16">
-          <ul className="flex items-center gap-2 list-none font-inter text-[16px] font-bold text-black">
+          <ul className="flex items-center gap-2 list-none font-nav text-[16px] font-bold text-[#212529]">
             {/* 1. Services - Mega Menu */}
             <li className="relative group" onMouseEnter={() => { setActiveMenu('services'); setActiveTab(0); }} onMouseLeave={() => setActiveMenu(null)}>
               <Link to="/services" className={cn("px-4 py-4 hover:text-[#0c67c4] flex items-center gap-1 transition-colors text-black", (activeMenu === 'services' || location.pathname === '/services') && "text-[#0c67c4]")}>
@@ -197,7 +197,7 @@ const Navbar = ({ onOpenModal }) => {
                       {servicesData[activeTab].content.map((c, i) => (
                         <div key={i} className="group">
                           <h4 className="font-bold text-[#2d465e] text-[16px] mb-3 transition-colors flex items-center gap-2 font-nunito"><Circle size={6} className="fill-[#0c67c4] text-[#0c67c4]" /> {c.title}</h4>
-                          <p className="text-gray-400 text-[13px] leading-relaxed font-roboto">{c.desc}</p>
+                          <p className="text-[#212529] text-[13px] leading-relaxed font-roboto">{c.desc}</p>
                         </div>
                       ))}
                     </div>
@@ -242,7 +242,7 @@ const Navbar = ({ onOpenModal }) => {
                     </div>
                     <div className="flex-grow pl-14 py-12">
                       <h3 className="text-[#2d465e] font-bold text-[28px] mb-8 font-nunito">{industriesData[activeTab].title}</h3>
-                      <p className="text-gray-500 text-[16px] font-roboto leading-relaxed">{industriesData[activeTab].desc}</p>
+                      <p className="text-[#212529] text-[16px] font-roboto leading-relaxed">{industriesData[activeTab].desc}</p>
                       <Link to="/industries" onClick={() => setActiveMenu(null)} className="mt-8 inline-flex items-center gap-2 text-[#0c67c4] font-bold hover:underline">Explore All Industries <ArrowRight size={16} /></Link>
                     </div>
                   </motion.div>
@@ -307,7 +307,7 @@ const HeroModal = ({ isOpen, onClose }) => (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={onClose} className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
         <motion.div initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.9, opacity: 0 }} className="relative bg-white w-full max-w-2xl rounded-[1.5rem] shadow-2xl p-10 z-[2001]">
           <button onClick={onClose} className="absolute top-6 right-6 text-gray-400 hover:text-gray-600"><X size={24} /></button>
-          <h2 className="text-2xl font-bold text-[#2d465e] text-center mb-8 font-nunito">Book a Free Consultation</h2>
+          <h2 className="text-[24px] font-bold text-[#2d465e] text-center mb-10 font-nunito">Book a Free Consultation</h2>
           <form className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <input type="text" placeholder="First Name *" className="w-full bg-[#f3f9ff] border-none px-6 py-4 rounded-xl text-sm outline-none" required />
@@ -336,10 +336,10 @@ const Hero = ({ onOpenModal }) => (
     <div className="absolute inset-0 bg-[#0d1b2a]/40 z-10" />
     <div className="container mx-auto px-6 relative z-20 text-white max-w-[1320px]">
       <motion.div initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.8 }} className="max-w-4xl">
-        <h1 className="text-5xl lg:text-[3.8rem] font-bold text-white leading-[1.05] mb-8 font-nunito tracking-tight pt-10">
+        <h1 className="text-[48px] font-bold !text-white leading-[1.2] mb-8 font-nunito tracking-tight pt-10">
           Your AI-First Delivery Powerhouse for Data, Cloud & Digital Transformation
         </h1>
-        <p className="text-xl lg:text-2xl text-white/90 mb-12 max-w-2xl font-roboto leading-relaxed">
+        <p className="text-[20px] !text-white/90 mb-12 max-w-2xl font-roboto leading-[1.6]">
           With data made simple, DataMatrixIQ paves the way to a scalable, smarter and more powerful data journey.
         </p>
         <div className="flex gap-6 flex-wrap">
@@ -364,16 +364,23 @@ const ServicesPreview = () => {
   return (
     <section id="services" className="py-16 bg-gradient-to-b from-white to-[#f6f8fa]">
       <div className="container mx-auto px-6 max-w-[1320px]">
-        <h2 className="text-[36px] font-bold text-[#2d465e] mb-2 font-nunito flex justify-center">Empowering Enterprises Through Intelligent Solutions</h2>
+        <h2 className="text-[32px] font-bold text-[#2d465e] mb-2 font-nunito flex justify-center">Empowering Enterprises Through Intelligent Solutions</h2>
         <div className="w-14 h-[3px] bg-[#0c67c4] mx-auto my-4 mt-1"></div>
-        <p className="text-center text-gray-500 font-roboto text-lg leading-relaxed">At DataMatrixIQ, we help organizations unlock the power of AI, data, and cloud to accelerate innovation, optimize operations, and drive sustainable growth.</p>
+        <p className="text-center text-[#212529] font-roboto text-[16px] leading-[1.6]">At DataMatrixIQ, we help organizations unlock the power of AI, data, and cloud to accelerate innovation, optimize operations, and drive sustainable growth.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20">
           {services.map((s, i) => (
-            <div key={i} className="p-10 group rounded-[2.5rem] border border-gray-100 bg-white shadow-sm flex flex-col items-center text-center hover:bg-[#0c67c4] transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 group">
+            <motion.div 
+              key={i} 
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="p-10 group rounded-[2.5rem] border border-gray-100 bg-white shadow-sm flex flex-col items-center text-center hover:bg-[#0c67c4] transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 group"
+            >
               <div className="text-[#0c67c4] group-hover:text-white mb-8 transform transition-all duration-500 scale-125 group-hover:scale-110">{s.icon}</div>
               <h3 className="text-[18px] font-bold text-[#2d465e] group-hover:text-white mb-4 font-nunito">{s.title}</h3>
-              <p className="text-gray-400 text-[13px] group-hover:text-white/90 leading-relaxed font-roboto">{s.desc}</p>
-            </div>
+              <p className="text-[#212529] text-[13px] group-hover:text-white/90 leading-relaxed font-roboto">{s.desc}</p>
+            </motion.div>
           ))}
         </div>
         <div className='mt-10 flex flex-col items-center'>
@@ -398,17 +405,24 @@ const CapabilitySection = () => {
     <section id="capabilities" className="py-32 bg-white">
       <div className="container mx-auto px-6 max-w-[1320px]">
         <div className="text-center mb-16">
-          <h2 className="text-[36px] font-bold text-[#2d465e] mb-2 font-nunito">Technology & Tools</h2>
+          <h2 className="text-[32px] font-bold text-[#2d465e] mb-2 font-nunito">Technology & Tools</h2>
           <div className="w-14 h-[3px] bg-[#0c67c4] mx-auto mb-10"></div>
-          <p className="text-gray-500 font-roboto text-lg leading-relaxed">We build scalable and future-ready data platforms using today's most trusted tools:</p>
+          <p className="text-[#212529] font-roboto text-[16px] leading-[1.6]">We build scalable and future-ready data platforms using today's most trusted tools:</p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {tools.map((t, i) => (
-            <div key={i} className="bg-white text-black p-16 rounded-[4rem] text-center flex flex-col items-center gap-8 hover:-translate-y-3 transition-all shadow-xl">
+            <motion.div 
+              key={i} 
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="bg-white text-black p-16 rounded-[4rem] text-center flex flex-col items-center gap-8 hover:-translate-y-3 transition-all shadow-xl"
+            >
               <div className="mb-2 text-[#0c67c4]">{t.icon}</div>
-              <h3 className="text-xl font-bold font-nunito">{t.title}</h3>
-              <p className="text-black/80 text-sm leading-relaxed">{t.items}</p>
-            </div>
+              <h3 className="text-[20px] font-bold font-nunito text-[#2d465e]">{t.title}</h3>
+              <p className="text-[#212529] text-[14px] leading-relaxed font-roboto">{t.items}</p>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -430,17 +444,24 @@ const IndustriesGrid = () => {
     <section id="industries" className="py-32 bg-[#f9fcff]">
       <div className="container mx-auto px-6 max-w-[1320px]">
         <div className="text-center mb-16">
-          <h2 className="text-[36px] font-bold text-[#2d465e] mb-2 font-nunito">Transforming Industries with Data Intelligence</h2>
+          <h2 className="text-[32px] font-bold text-[#2d465e] mb-2 font-nunito">Transforming Industries with Data Intelligence</h2>
           <div className="w-14 h-[3px] bg-[#0c67c4] mx-auto mb-10"></div>
-          <p className="text-gray-500 max-w-5xl mx-auto text-lg leading-relaxed font-roboto">From energy to finance, retail to healthcare - DataMatrixIQ helps enterprises harness AI and data innovation to operate smarter, scale faster, and grow sustainably.</p>
+          <p className="text-[#212529] max-w-5xl mx-auto text-[16px] leading-[1.6] font-roboto">From energy to finance, retail to healthcare - DataMatrixIQ helps enterprises harness AI and data innovation to operate smarter, scale faster, and grow sustainably.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {industries.map((ind, i) => (
-            <div key={i} className="p-12 rounded-[2.5rem] border border-gray-100 bg-white shadow-sm flex flex-col items-center text-center hover:border-[#0c67c4] transition-all group">
+            <motion.div 
+              key={i} 
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="p-12 rounded-[2.5rem] border border-gray-100 bg-white shadow-sm flex flex-col items-center text-center hover:border-[#0c67c4] transition-all group"
+            >
               <div className="text-[#0c67c4] mb-8 transform scale-[1.8] group-hover:scale-[2.1] transition-transform">{ind.icon}</div>
               <h3 className="text-[17px] font-bold text-[#2d465e] mb-4 font-nunito">{ind.title}</h3>
-              <p className="text-gray-400 text-xs leading-relaxed font-roboto">{ind.desc}</p>
-            </div>
+              <p className="text-[#212529] text-[13px] leading-relaxed font-roboto">{ind.desc}</p>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -451,20 +472,32 @@ const IndustriesGrid = () => {
 const PartnershipSection = () => (
   <section id="partnership" className="py-32 bg-[#f3f9ff]">
     <div className="container mx-auto px-6 max-w-[1320px]">
-      <div className="text-center mb-24">
-        <h2 className="text-[36px] font-bold text-[#2d465e] mb-4 font-nunito">Partnerships</h2>
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="text-center mb-24"
+      >
+        <h2 className="text-[32px] font-bold text-[#2d465e] mb-4 font-nunito">Partnerships</h2>
         <div className="w-14 h-[3px] bg-[#0c67c4] mx-auto mb-8"></div>
-        <p className="text-[#0c67c4] font-bold text-xl mb-6 font-nunito tracking-wide">We believe strong partnerships amplify success</p>
-        <p className="text-gray-500 max-w-4xl mx-auto text-lg leading-relaxed font-roboto">
+        <p className="text-[#0c67c4] font-bold text-[18px] mb-6 font-nunito tracking-wide">We believe strong partnerships amplify success</p>
+        <p className="text-[#212529] max-w-4xl mx-auto text-[16px] leading-[1.6] font-roboto">
           By working closely with our partners, we ensure our clients benefit from cutting-edge technology combined with trusted expertise. Our deep-rooted relationships with leading cloud providers and technology platforms allow us to deliver high-performance, future-ready solutions tailored to your unique business needs.
         </p>
-      </div>
+      </motion.div>
 
-      <div className="flex justify-center mt-12 bg-white p-12 rounded-[3rem] border border-gray-100 shadow-xl max-w-5xl mx-auto hover:-translate-y-2 transition-transform">
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="flex justify-center mt-12 bg-white p-12 rounded-[3rem] border border-gray-100 shadow-xl max-w-5xl mx-auto hover:-translate-y-2 transition-transform"
+      >
         <img src="https://datamatrixiq.com/img/service-image.png" alt="Our Partners" className="w-full h-auto object-contain" />
-      </div>
+      </motion.div>
       
-      <p className="text-center mt-20 text-gray-400 font-bold italic font-roboto">
+      <p className="text-center mt-20 text-[#212529] font-bold italic font-roboto text-[14px]">
         "Our partners are integral to our mission of accelerating digital transformation through intelligent data solutions."
       </p>
     </div>
@@ -474,6 +507,7 @@ const PartnershipSection = () => (
 const TeamSection = () => {
   const team = [
     { id: "shalu-mahawal", name: "Shalu Mahawal", role: "Founder & CEO", desc: "Sets the vision and drives strategic growth of Data Matrix IQ.", img: "https://datamatrixiq.com/media/le2bbmm0/profile1.png", linkedin: "https://www.linkedin.com/in/mahawals/", email: "contact@datamatrixiq.com", phone: "+61 451 110 993", bio: "Shalu's bio - Cofounder and Marketing Specialist with 25+ years of experience across customer service, marketing, customer care, and account management across the UK, New Zealand, and Australia. Specializes in IT solution sales and support, including CRM/CSM platforms, Salesforce, hosting, and data-driven solutions.<br><br>Known for consultative selling, account growth, and multi-team project coordination, and for building long-term client partnerships that drive measurable business outcomes. As Cofounder, leads teams and helps define and execute the strategic vision and growth roadmap for DataMatrixIQ." },
+    { id: "Zack ristov", name: "Zack Ristov", role: "Principal Data Consultant", img: "", linkedin: "https://www.linkedin.com/in/zack-ristov/", email: "contact@datamatrixiq.com", phone: "+61 449 602 007", bio: "Technology strategist with 25+ years of experience helping businesses and MSPs drive growth through AI, automation, and scalable platforms. Focused on improving efficiency, enabling digital transformation, and building strong partner ecosystems to deliver real business outcomes." },
     { id: "harsha-mahawal", name: "Harsha Mahawal", role: "Principal Data Consultant", desc: "Leads data strategy and solution delivery across the ANZ region.", img: "https://datamatrixiq.com/media/44gd51ch/profile_2.png", linkedin: "https://www.linkedin.com/in/harshamahawal/", email: "contact@datamatrixiq.com", phone: "+61 451 110 993", bio: "Harsha is a veteran data consultant specializing in large-scale data architecture and analytics. He leads technical delivery across Australia and New Zealand, helping enterprises unlock the power of their data through modern cloud platforms and intelligent automation." },
     { id: "alan-jennings", name: "Alan Jennings", role: "Presales Director", desc: "Manages regional operations and client relationships in New Zealand.", img: "https://datamatrixiq.com/media/k0gguotm/profile_4-1-removebg-preview.jpg", linkedin: "https://www.linkedin.com/in/jenningsa/", email: "contact@datamatrixiq.com", phone: "+61 451 110 993", bio: "Alan brings extensive expertise in presales strategy and client relationship management. With a strong focus on the New Zealand market, he bridges the gap between complex technical solutions and business objectives, ensuring clients receive tailored, high-impact data strategies." },
     { id: "emiliano-giovannoni", name: "Emiliano Giovannoni", role: "Principal Consultant Partner, Australia", desc: "Leads brand positioning and demand generation initiatives.", img: "https://datamatrixiq.com/media/npjplt2j/profile2.png", linkedin: "https://www.linkedin.com/in/emilianogiovannoni/", email: "contact@datamatrixiq.com", phone: "+61 451 110 993", bio: "Emiliano is a strategic consultant focused on market growth and branding. He partners with DataMatrixIQ to drive regional expansion in Australia, leveraging his deep understanding of demand generation and enterprise solution positioning." },
@@ -483,11 +517,18 @@ const TeamSection = () => {
     <section id="team" className="py-24 bg-white">
       <div className="container mx-auto px-6 max-w-[1320px]">
         <div className="text-center mb-16">
-          <p className="text-gray-500 font-roboto text-lg leading-relaxed">The Data Matrix IQ team consists of skilled professionals including:</p>
+          <p className="text-[#212529] font-roboto text-[18px] leading-[1.6]">The Data Matrix IQ team consists of skilled professionals including:</p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8 justify-center">
           {team.map((m, i) => (
-             <div key={i} className="flex flex-col items-center text-center group">
+             <motion.div 
+               key={i} 
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               transition={{ duration: 0.6, delay: i * 0.1 }}
+               className="flex flex-col items-center text-center group"
+             >
                <div className="w-[180px] h-[180px] rounded-full overflow-hidden mb-6 relative">
                  <img src={m.img} className="w-full h-full object-cover" alt={m.name} />
                  {m.linkedin && (
@@ -500,9 +541,9 @@ const TeamSection = () => {
                <div className="border border-gray-200 px-6 py-1.5 mb-6 min-h-[40px] flex items-center justify-center">
                  <p className="text-[#495057] text-[13px] font-roboto leading-snug">{m.role}</p>
                </div>
-               <p className="text-gray-500 text-xs leading-relaxed font-roboto mb-6 px-4">{m.desc}</p>
+               <p className="text-[#212529] text-[13px] leading-relaxed font-roboto mb-6 px-4">{m.desc}</p>
                <Link to={`/team-profile/${m.id}`} className="text-[#0c67c4] font-bold text-[15px] hover:underline transition-all">View Profile</Link>
-             </div>
+             </motion.div>
           ))}
         </div>
         <div className="mt-20 text-center bg-white border border-gray-100 shadow-sm py-12 rounded-[2rem]">
@@ -517,6 +558,7 @@ const TeamProfilePage = () => {
   const { id } = useParams()
   const team = [
     { id: "shalu-mahawal", name: "Shalu Mahawal", role: "Co-Founder & Australia Head", img: "https://datamatrixiq.com/media/le2bbmm0/profile1.png", linkedin: "https://www.linkedin.com/in/mahawals/", email: "contact@datamatrixiq.com", phone: "+61 451 110 993", bio: "Shalu's bio - Cofounder and Marketing Specialist with 25+ years of experience across customer service, marketing, customer care, and account management across the UK, New Zealand, and Australia. Specializes in IT solution sales and support, including CRM/CSM platforms, Salesforce, hosting, and data-driven solutions.<br><br>Known for consultative selling, account growth, and multi-team project coordination, and for building long-term client partnerships that drive measurable business outcomes. As Cofounder, leads teams and helps define and execute the strategic vision and growth roadmap for DataMatrixIQ." },
+    { id: "Zack ristov", name: "Zack Ristov", role: "Principal Data Consultant", img: "", linkedin: "https://www.linkedin.com/in/zack-ristov/", email: "contact@datamatrixiq.com", phone: "+61 449 602 007", bio: "Technology strategist with 25+ years of experience helping businesses and MSPs drive growth through AI, automation, and scalable platforms. Focused on improving efficiency, enabling digital transformation, and building strong partner ecosystems to deliver real business outcomes." },
     { id: "harsha-mahawal", name: "Harsha Mahawal", role: "Principal Data Consultant", img: "https://datamatrixiq.com/media/44gd51ch/profile_2.png", linkedin: "https://www.linkedin.com/in/harshamahawal/", email: "contact@datamatrixiq.com", phone: "+61 451 110 993", bio: "Harsha is a veteran data consultant specializing in large-scale data architecture and analytics. He leads technical delivery across Australia and New Zealand, helping enterprises unlock the power of their data through modern cloud platforms and intelligent automation." },
     { id: "alan-jennings", name: "Alan Jennings", role: "Presales Director", img: "https://datamatrixiq.com/media/k0gguotm/profile_4-1-removebg-preview.jpg", linkedin: "https://www.linkedin.com/in/jenningsa/", email: "contact@datamatrixiq.com", phone: "+61 451 110 993", bio: "Alan brings extensive expertise in presales strategy and client relationship management. With a strong focus on the New Zealand market, he bridges the gap between complex technical solutions and business objectives, ensuring clients receive tailored, high-impact data strategies." },
     { id: "emiliano-giovannoni", name: "Emiliano Giovannoni", role: "Principal Consultant Partner, Australia", img: "https://datamatrixiq.com/media/npjplt2j/profile2.png", linkedin: "https://www.linkedin.com/in/emilianogiovannoni/", email: "contact@datamatrixiq.com", phone: "+61 451 110 993", bio: "Emiliano is a strategic consultant focused on market growth and branding. He partners with DataMatrixIQ to drive regional expansion in Australia, leveraging his deep understanding of demand generation and enterprise solution positioning." },
@@ -542,19 +584,19 @@ const TeamProfilePage = () => {
                   <div className="w-12 h-12 rounded-full border border-gray-100 flex items-center justify-center group-hover:bg-[#0077b5] group-hover:text-white transition-all text-[#0077b5]">
                     <Linkedin size={20} />
                   </div>
-                  <span className="font-bold text-gray-500 font-inter group-hover:text-[#0c67c4] transition-colors">LinkedIn</span>
+                  <span className="font-bold text-[#212529] font-inter group-hover:text-[#0c67c4] transition-colors">LinkedIn</span>
                 </a>
                 <a href={`mailto:${member.email}`} className="flex items-center gap-4 group">
                   <div className="w-12 h-12 rounded-full border border-gray-100 flex items-center justify-center group-hover:bg-[#0d1b2a] group-hover:text-white transition-all text-[#0d1b2a]">
                     <Mail size={20} />
                   </div>
-                  <span className="font-bold text-gray-500 font-inter group-hover:text-[#0c67c4] transition-colors">{member.email}</span>
+                  <span className="font-bold text-[#212529] font-inter group-hover:text-[#0c67c4] transition-colors">{member.email}</span>
                 </a>
                 <a href={`tel:${member.phone.replace(/\s/g, '')}`} className="flex items-center gap-4 group">
                   <div className="w-12 h-12 rounded-full border border-gray-100 flex items-center justify-center group-hover:bg-[#0c67c4] group-hover:text-white transition-all text-[#0c67c4]">
                     <Phone size={20} />
                   </div>
-                  <span className="font-bold text-gray-500 font-inter group-hover:text-[#0c67c4] transition-colors">{member.phone}</span>
+                  <span className="font-bold text-[#212529] font-inter group-hover:text-[#0c67c4] transition-colors">{member.phone}</span>
                 </a>
               </div>
             </motion.div>
@@ -564,10 +606,10 @@ const TeamProfilePage = () => {
           <div className="lg:w-8/12">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
               <div className="inline-block relative mb-10">
-                <h2 className="text-4xl font-bold text-[#2d465e] font-nunito relative z-10">Profile</h2>
+                <h2 className="text-[32px] font-bold text-[#2d465e] font-nunito relative z-10">Profile</h2>
                 <div className="absolute -bottom-2 left-0 w-full h-1/2 bg-[#0c67c4]/5 -z-0"></div>
               </div>
-              <div className="text-gray-500 text-lg font-roboto leading-[1.8] space-y-6" dangerouslySetInnerHTML={{ __html: member.bio }} />
+              <div className="text-[#212529] text-[18px] font-roboto leading-[1.8] space-y-6" dangerouslySetInnerHTML={{ __html: member.bio }} />
               
               <div className="mt-20 pt-10 border-t border-gray-100">
                 <Link to="/about-us" className="inline-flex items-center gap-2 text-[#0c67c4] font-bold hover:underline font-inter">
@@ -590,31 +632,37 @@ const AboutSection = ({ showTitle = true }) => (
         <div>
           {showTitle && (
             <div className="mb-10">
-              <h2 className="text-[36px] font-bold text-[#2d465e] mb-2 font-nunito">About Us</h2>
+              <h2 className="text-[32px] font-bold text-[#2d465e] mb-2 font-nunito">About Us</h2>
               <div className="w-14 h-[3px] bg-[#0c67c4]"></div>
             </div>
           )}
           <h3 className="text-[32px] font-bold text-[#2d465e] mb-10 font-nunito">Who We Are</h3>
-          <p className="text-gray-500 mb-14 text-lg leading-relaxed font-roboto">
+          <p className="text-[16px] text-[#212529] mb-14 font-roboto leading-[1.6]">
             DataMatrixIQ is a results-driven delivery powerhouse across Data Engineering, Salesforce, Cloud, and Cybersecurity, trusted to execute complex, high-value transformation programs end to end. We architect and operationalise modern, scalable data platforms that unify fragmented systems, strengthen data trust, and eliminate operational bottlenecks.
           </p>
           <div className="grid md:grid-cols-2 gap-12">
             <div className="border-l-4 border-[#0c67c4] pl-6">
-              <h4 className="font-bold text-[#2d465e] text-lg mb-4 font-nunito">Senior-Led Expertise</h4>
-              <p className="text-gray-400 text-sm leading-relaxed font-roboto">Deep expertise across Snowflake, Databricks, AWS, Azure, and AI- with hands-on senior oversight.</p>
+              <h4 className="font-bold text-[#2d465e] text-[18px] mb-4 font-nunito">Senior-Led Expertise</h4>
+              <p className="text-[#212529] text-[14px] leading-[1.6] font-roboto">Deep expertise across Snowflake, Databricks, AWS, Azure, and AI- with hands-on senior oversight.</p>
             </div>
             <div className="border-l-4 border-[#0c67c4] pl-6">
-              <h4 className="font-bold text-[#2d465e] text-lg mb-4 font-nunito">Efficient Hybrid Delivery</h4>
-              <p className="text-gray-400 text-sm leading-relaxed font-roboto">ANZ delivery powerhouse with scalable offshore engineering for cost-effective, high-quality delivery.</p>
+              <h4 className="font-bold text-[#2d465e] text-[18px] mb-4 font-nunito">Efficient Hybrid Delivery</h4>
+              <p className="text-[#212529] text-[14px] leading-[1.6] font-roboto">ANZ delivery powerhouse with scalable offshore engineering for cost-effective, high-quality delivery.</p>
             </div>
           </div>
         </div>
-        <div className="relative">
-          <img src="https://datamatrixiq.com/media/nakdfkns/about-5.webp" className="rounded-[4rem] shadow-2xl border-4 border-white" />
-          <div className="absolute -bottom-16 -left-16 w-2/3 border-8 border-white rounded-[4rem] shadow-2xl overflow-hidden z-20 hidden md:block">
-            <img src="https://datamatrixiq.com/media/45qn5vu5/about-2.webp" className="w-full" />
-          </div>
-      </div>
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative"
+          >
+            <img src="https://datamatrixiq.com/media/nakdfkns/about-5.webp" className="rounded-[4rem] shadow-2xl border-4 border-white" />
+            <div className="absolute -bottom-16 -left-16 w-2/3 border-8 border-white rounded-[4rem] shadow-2xl overflow-hidden z-20 hidden md:block">
+              <img src="https://datamatrixiq.com/media/45qn5vu5/about-2.webp" className="w-full" />
+            </div>
+          </motion.div>
     </div>
   </div>
 </section>
@@ -641,12 +689,12 @@ const AboutPage = ({ onOpenModal }) => {
         <div className="container mx-auto px-6 max-w-[1320px] relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <motion.div initial={{ x: -20, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.6 }} className="lg:w-6/12">
-              <h1 className="text-6xl font-bold text-[#2d465e] mb-10 font-nunito leading-tight">About Us</h1>
-              <div className="description text-lg leading-relaxed font-roboto">
-                <p className="text-[#2d465e] font-bold text-xl mb-6 font-nunito leading-relaxed">
-                  Data Matrix IQ <span className="text-gray-500 font-normal">is a technology and data-driven delivery powerhouse firm helping organizations modernize, scale, and innovate using data, analytics, cloud, and intelligent digital solutions.</span>
+              <h1 className="text-[48px] font-bold text-[#2d465e] mb-10 font-nunito leading-[1.2]">About Us</h1>
+              <div className="description text-[16px] leading-[1.6] font-roboto">
+                <p className="text-[#2d465e] font-bold text-[20px] mb-6 font-nunito leading-[1.4]">
+                  Data Matrix IQ <span className="text-[#212529] font-normal">is a technology and data-driven delivery powerhouse firm helping organizations modernize, scale, and innovate using data, analytics, cloud, and intelligent digital solutions.</span>
                 </p>
-                <p className="text-gray-500 mb-8">
+                <p className="text-[#212529] mb-8">
                   We partner with businesses across industries to solve complex challenges through data engineering, AI & machine learning, enterprise analytics, cloud infrastructure, and application modernization. Our focus is on delivering practical, secure, and scalable solutions that create measurable business value.
                 </p>
               </div>
@@ -662,7 +710,13 @@ const AboutPage = ({ onOpenModal }) => {
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto px-6 max-w-[1320px]">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="bg-white p-12 lg:p-14 rounded-[3.5rem] shadow-[0_10px_50px_rgba(12,103,196,0.08)] border border-gray-100/50 hover:-translate-y-2 transition-transform duration-500">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="bg-white p-12 lg:p-14 rounded-[3.5rem] shadow-[0_10px_50px_rgba(12,103,196,0.08)] border border-gray-100/50 hover:-translate-y-2 transition-transform duration-500"
+            >
               <h2 className="text-[32px] font-bold text-[#2d465e] mb-10 font-nunito">What Sets Us Apart</h2>
               <ul className="space-y-6">
                 {[
@@ -672,15 +726,21 @@ const AboutPage = ({ onOpenModal }) => {
                   "Agile delivery with transparent collaboration",
                   "Industry-aligned and client-focused execution"
                 ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-4 text-gray-700 font-roboto text-lg font-medium">
+                  <li key={i} className="flex items-start gap-4 text-[#212529] font-roboto text-[18px] font-medium">
                     <CheckCircle size={24} className="text-[#0c67c4] flex-shrink-0 mt-0.5" /> {item}
                   </li>
                 ))}
               </ul>
-            </div>
-            <div className="flex justify-center">
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="flex justify-center"
+            >
               <img src="https://datamatrixiq.com/media/txvjgbbr/illustration-1.webp" alt="Illustration" className="w-[85%] h-auto hover:scale-105 transition-transform duration-700" />
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -696,11 +756,11 @@ const AboutPage = ({ onOpenModal }) => {
         <div className="container mx-auto px-6 max-w-[1320px]">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-6/12 bg-gradient-to-br from-[#0c67c4] to-[#0a54a0] text-white p-14 rounded-[3.5rem] shadow-[0_20px_60px_rgba(12,103,196,0.3)]">
-              <h3 className="text-[36px] font-bold mb-8 font-nunito leading-tight">Let's Build What's Next</h3>
-              <p className="opacity-90 leading-relaxed font-roboto text-xl mb-6">
+              <h3 className="text-[32px] font-bold mb-8 font-nunito leading-[1.2]">Let's Build What's Next</h3>
+              <p className="opacity-90 leading-[1.6] font-roboto text-[18px] mb-6">
                 At Data Matrix IQ, we don't just implement technology - we create capabilities that help businesses succeed.
               </p>
-              <p className="font-bold text-xl mb-10 font-nunito text-white/90">
+              <p className="font-bold text-[18px] mb-10 font-nunito text-white/90 leading-[1.4]">
                 Let's partner to unlock the full potential of your data and digital ecosystem.
               </p>
             </div>
@@ -795,10 +855,10 @@ const CapabilitiesPage = ({ onOpenModal }) => {
               transition={{ duration: 0.8 }}
               className="lg:w-1/2"
             >
-              <h1 className="text-5xl lg:text-[4.5rem] font-bold text-[#2d465e] mb-10 font-nunito leading-tight">
+              <h1 className="text-[48px] font-bold text-[#2d465e] mb-10 font-nunito leading-[1.2]">
                 Powering Data, Cloud & Digital <br /> <span className="text-[#0c67c4]">Transformation</span>
               </h1>
-              <p className="text-xl text-gray-500 mb-12 font-roboto leading-relaxed max-w-2xl">
+              <p className="text-[16px] text-[#212529] mb-12 font-roboto leading-[1.6] max-w-2xl">
                 At Data Matrix IQ, we help organizations modernize platforms, unify data, and build intelligent systems. Our capabilities span Data Engineering, Salesforce, Cloud, and DevOps, delivering measurable outcomes from strategy through execution.
               </p>
               <Link 
@@ -834,8 +894,8 @@ const CapabilitiesPage = ({ onOpenModal }) => {
       {/* Core Capabilities Header */}
       <section className="py-20 bg-[#f8f9fa] border-b border-gray-100">
         <div className="container mx-auto px-6 max-w-[1320px] text-center">
-          <h2 className="text-[3.5rem] font-bold text-[#2d465e] mb-6 font-nunito">Core Capabilities</h2>
-          <p className="text-xl text-gray-500 font-roboto max-w-3xl mx-auto italic">
+          <h2 className="text-[32px] font-bold text-[#2d465e] mb-6 font-nunito">Core Capabilities</h2>
+          <p className="text-[16px] text-[#212529] font-roboto max-w-3xl mx-auto italic leading-[1.6]">
             Empowering your digital transformation with specialized engineering and strategic platform management.
           </p>
         </div>
@@ -858,11 +918,11 @@ const CapabilitiesPage = ({ onOpenModal }) => {
                   <div className="w-16 h-16 bg-[#e7f1ff] rounded-2xl flex items-center justify-center text-[#0c67c4] mb-8">
                     {cap.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-[#2d465e] mb-4 font-nunito">{cap.title}</h3>
-                  <p className="text-gray-500 font-bold mb-8 font-roboto">{cap.desc}</p>
+                  <h3 className="text-[24px] font-bold text-[#2d465e] mb-4 font-nunito">{cap.title}</h3>
+                  <p className="text-[16px] text-[#212529] font-bold mb-8 font-roboto leading-[1.6]">{cap.desc}</p>
                   <ul className="space-y-4 mb-10">
                     {cap.bullets.map((b, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-gray-500 font-medium font-roboto text-sm">
+                      <li key={idx} className="flex items-start gap-3 text-[#212529] font-medium font-roboto text-[14px] leading-[1.6]">
                         <ChevronRight size={16} className="text-[#0c67c4] mt-0.5 shrink-0" /> {b}
                       </li>
                     ))}
@@ -901,7 +961,7 @@ const CapabilitiesPage = ({ onOpenModal }) => {
                 "AI-driven automation",
                 "High-performance analytics"
               ].map((item, i) => (
-                <div key={i} className="flex items-center gap-4 text-xl justify-center font-bold">
+                <div key={i} className="flex items-center gap-4 text-[18px] justify-center font-bold">
                   <div className="w-2.5 h-2.5 bg-white rounded-full" /> {item}
                 </div>
               ))}
@@ -918,8 +978,8 @@ const CapabilitiesPage = ({ onOpenModal }) => {
         <div className="container mx-auto px-6 max-w-[1320px]">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2">
-              <h2 className="text-[3rem] font-bold text-[#2d465e] mb-6 font-nunito leading-tight">Engagement Models</h2>
-              <p className="text-xl text-gray-500 mb-10 font-roboto">Choose how you work with us:</p>
+              <h2 className="text-[32px] font-bold text-[#2d465e] mb-6 font-nunito leading-tight">Engagement Models</h2>
+              <p className="text-[16px] text-[#212529] mb-10 font-roboto leading-[1.6]">Choose how you work with us:</p>
               <ul className="space-y-6">
                 {[
                   { title: "Outcome-Based Delivery", desc: "We own results end-to-end" },
@@ -929,8 +989,8 @@ const CapabilitiesPage = ({ onOpenModal }) => {
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-4">
                     <div className="w-2.5 h-2.5 bg-[#0c67c4] rounded-full mt-2 shrink-0" />
-                    <p className="text-lg text-gray-700 font-bold font-roboto">
-                      <span className="text-black">{item.title}</span> – <span className="text-gray-500 font-normal">{item.desc}</span>
+                    <p className="text-[16px] text-[#212529] font-bold font-roboto leading-[1.6]">
+                      <span className="text-black">{item.title}</span> – <span className="text-[#212529] font-normal">{item.desc}</span>
                     </p>
                   </li>
                 ))}
@@ -1017,7 +1077,7 @@ const Footer = ({ onOpenModal }) => {
           {/* Column 2: Useful Links (3/12) */}
           <div className="md:col-span-3">
             <h4 className="font-extrabold text-[#0c67c4] text-[16px] mb-8 font-nunito">Useful Links</h4>
-            <div className="flex flex-col gap-5 text-gray-500 font-medium text-[15px] font-roboto">
+            <div className="flex flex-col gap-5 text-[#212529] font-medium text-[15px] font-roboto">
               <Link to="/about-us" className="hover:text-[#0c67c4] transition-colors">About-Us</Link>
               <Link to="/services" className="hover:text-[#0c67c4] transition-colors">Services</Link>
               <Link to="/industries" className="hover:text-[#0c67c4] transition-colors">Industries</Link>
@@ -1033,14 +1093,14 @@ const Footer = ({ onOpenModal }) => {
                 contact@datamatrixiq.com
               </a>
               
-              <div className="flex items-start gap-4 text-gray-500">
+              <div className="flex items-start gap-4 text-[#212529]">
                 <img src="https://datamatrixiq.com/img/australia.png" className="w-6 h-auto mt-1" alt="AUS" />
                 <p className="font-medium">
                   - Wyndham City, Melbourne, Australia <a href="tel:+61451110993" className="text-[#0c67c4] font-bold">(+61 451 110 993)</a>
                 </p>
               </div>
 
-              <div className="flex items-start gap-4 text-gray-500">
+              <div className="flex items-start gap-4 text-[#212529]">
                 <img src="https://datamatrixiq.com/img/new-zealand.png" className="w-6 h-auto mt-1" alt="NZ" />
                 <p className="font-medium">
                   - Wellington CBD, New Zealand <a href="tel:+64220386786" className="text-[#0c67c4] font-bold">(+64 22 038 6786)</a>
@@ -1164,10 +1224,10 @@ const ServicesPage = ({ onOpenModal }) => {
         <div className="container mx-auto px-6 max-w-[1320px] relative z-20">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <motion.div initial={{ x: -20, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.6 }} className="lg:w-7/12">
-              <h1 className="text-4xl lg:text-[3.5rem] font-bold text-[#2d465e] mb-8 font-nunito leading-tight">
+              <h1 className="text-[48px] font-bold text-[#2d465e] mb-8 font-nunito leading-[1.2]">
                 AI-First Data and Salesforce Engineering - Built for Scale, Intelligence, and Growth
               </h1>
-              <p className="text-xl text-gray-500 max-w-4xl mb-12 font-roboto leading-relaxed">
+              <p className="text-[16px] text-[#212529] max-w-4xl mb-12 font-roboto leading-[1.6]">
                 DataMatrixIQ empowers enterprises with intelligent data, AI, and cloud-driven solutions - transforming operations, decisions, and outcomes.
               </p>
               <div className="flex gap-6 flex-wrap">
@@ -1193,16 +1253,16 @@ const ServicesPage = ({ onOpenModal }) => {
       <section id="snapshot" className="py-32 bg-white">
         <div className="container mx-auto px-6 max-w-[1320px]">
           <div className="text-center mb-24">
-            <h2 className="text-4xl lg:text-5xl font-bold text-[#2d465e] mb-6 font-nunito">Quick Services Snapshot</h2>
+            <h2 className="text-[32px] font-bold text-[#2d465e] mb-6 font-nunito">Quick Services Snapshot</h2>
             <div className="w-14 h-[3px] bg-[#0c67c4] mx-auto mb-10"></div>
-            <p className="text-gray-500 text-xl max-w-2xl mx-auto font-roboto">An instant overview of our service pillars - engineered for the modern enterprise.</p>
+            <p className="text-[#212529] text-[16px] max-w-2xl mx-auto font-roboto leading-[1.6]">An instant overview of our service pillars - engineered for the modern enterprise.</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
             {snapshot.map((s, i) => (
               <div key={i} className="p-8 border border-gray-100 rounded-[2.5rem] hover:shadow-xl transition-all group hover:border-[#0c67c4] bg-white text-center flex flex-col items-center">
                 <div className="text-[#0c67c4] mb-6 transform scale-[1.4] transition-transform group-hover:scale-[1.6]">{s.icon}</div>
                 <h3 className="text-sm font-bold text-[#2d465e] mb-3 font-nunito leading-tight">{s.title}</h3>
-                <p className="text-gray-400 text-[10px] leading-relaxed font-roboto">{s.desc}</p>
+                <p className="text-[#212529] text-[11px] leading-relaxed font-roboto">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -1213,30 +1273,42 @@ const ServicesPage = ({ onOpenModal }) => {
         <section key={sec.id} className={cn("py-32", sec.bg)}>
           <div className="container mx-auto px-6 max-w-[1320px]">
             <div className={cn("flex flex-col lg:flex-row items-center gap-20", i % 2 !== 0 && "lg:flex-row-reverse")}>
-              <div className="lg:w-1/2">
+              <motion.div 
+                initial={{ x: i % 2 === 0 ? -30 : 30, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="lg:w-1/2"
+              >
                 <div className="text-[#0c67c4] mb-6 font-bold uppercase tracking-widest text-sm font-inter flex items-center gap-3">
                   <span className="w-8 h-[2px] bg-[#0c67c4]"></span> {sec.subtitle}
                 </div>
-                <h2 className="text-4xl lg:text-[2.8rem] font-bold text-[#2d465e] mb-8 font-nunito leading-tight">{sec.title}</h2>
-                <p className="text-gray-500 text-xl leading-relaxed mb-10 font-roboto">{sec.desc}</p>
+                <h2 className="text-[32px] font-bold text-[#2d465e] mb-8 font-nunito leading-[1.4]">{sec.title}</h2>
+                <p className="text-[#212529] text-[16px] leading-[1.6] mb-10 font-roboto">{sec.desc}</p>
                 <ul className="space-y-6">
                   {sec.items.map((item, idx) => (
-                    <li key={idx} className="flex items-center gap-4 text-gray-700 font-bold text-lg font-roboto">
+                    <li key={idx} className="flex items-center gap-4 text-[#212529] font-bold text-[18px] font-roboto">
                       <div className="bg-[#0c67c4] p-1 rounded-full"><CheckCircle size={14} className="text-white" /></div>
                       {item}
                     </li>
                   ))}
                 </ul>
-              </div>
+              </motion.div>
               <div className="lg:w-1/2 w-full flex justify-center">
-                <div className="w-[80%] aspect-square bg-white rounded-[4rem] shadow-2xl flex items-center justify-center border-8 border-gray-50 relative overflow-hidden group">
+                <motion.div 
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="w-[80%] aspect-square bg-white rounded-[4rem] shadow-2xl flex items-center justify-center border-8 border-gray-50 relative overflow-hidden group"
+                >
                   <div className="text-[#0c67c4] opacity-5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[15] transform rotate-12 transition-transform duration-1000 group-hover:rotate-0">
                     {sec.icon}
                   </div>
                   <div className="text-[#0c67c4] scale-[4] z-10 transition-transform duration-500 group-hover:scale-[4.5]">
                     {sec.icon}
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>
@@ -1245,16 +1317,16 @@ const ServicesPage = ({ onOpenModal }) => {
       
       <section className="py-32 bg-[#0c67c4] text-white">
         <div className="container mx-auto px-6 max-w-[1320px] text-center">
-          <h2 className="text-[2.5rem] lg:text-[3.5rem] font-bold mb-10 font-nunito leading-tight">Empower Your Business <br /> with Data Intelligence.</h2>
-          <p className="text-2xl opacity-90 mb-14 max-w-3xl mx-auto font-roboto leading-relaxed">
+          <h2 className="text-[32px] lg:text-[48px] font-bold mb-10 font-nunito leading-[1.2] !text-white">Empower Your Business <br /> with Data Intelligence.</h2>
+          <p className="text-[20px] opacity-90 mb-14 max-w-3xl mx-auto font-roboto leading-[1.6] !text-white">
             From strategy to execution, DataMatrixIQ enables enterprises to scale smarter, innovate faster, and sustain success through data and AI.
           </p>
-          <button 
-            onClick={onOpenModal}
-            className="bg-white text-[#0c67c4] px-16 py-5 rounded-full font-bold text-xl hover:scale-105 transition-all shadow-2xl"
+          <Link 
+            to="/contact-us"
+            className="bg-white/15 border-2 border-white text-white px-16 py-5 rounded-full font-bold text-xl hover:bg-white hover:text-[#0c67c4] transition-all shadow-2xl inline-block"
           >
             Book a Call
-          </button>
+          </Link>
         </div>
       </section>
     </div>
@@ -1267,11 +1339,17 @@ const ClientsPage = () => {
     <div className="bg-white min-h-screen">
       <section className="py-32">
         <div className="container mx-auto px-6 max-w-[1320px]">
-          <div className="text-center mb-24">
-             <h2 className="text-4xl lg:text-5xl font-bold text-[#2d465e] mb-10 font-nunito leading-tight">Trusted by Forward-Thinking Organizations</h2>
-             <p className="text-xl text-gray-500 max-w-4xl mx-auto mb-20 font-roboto leading-relaxed">
-               At DataMatrixIQ, we’re proud to partner with ambitious businesses across industries, helping them unlock the power of data, cloud, and AI to drive measurable outcomes.
-             </p>
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-24"
+          >
+              <h2 className="text-[32px] font-bold text-[#2d465e] mb-10 font-nunito leading-[1.2]">Trusted by Forward-Thinking Organizations</h2>
+              <p className="text-[16px] text-[#212529] max-w-4xl mx-auto mb-20 font-roboto leading-[1.6]">
+                At DataMatrixIQ, we’re proud to partner with ambitious businesses across industries, helping them unlock the power of data, cloud, and AI to drive measurable outcomes.
+              </p>
              <div className="bg-white p-12 rounded-[4rem] border border-gray-100 shadow-2xl">
                <img 
                  src="https://datamatrixiq.com/img/datamatrix-client.png" 
@@ -1282,7 +1360,7 @@ const ClientsPage = () => {
              <p className="text-gray-400 mt-16 max-w-2xl mx-auto italic font-inter text-sm">
                A snapshot of organizations we’ve partnered with across technology, finance, healthcare, and enterprise services.
              </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -1290,7 +1368,7 @@ const ClientsPage = () => {
         <div className="container mx-auto px-6 max-w-[1320px]">
           <div className="grid lg:grid-cols-2 gap-24 items-center">
             <div>
-              <h2 className="text-4xl lg:text-5xl font-bold text-[#2d465e] mb-12 font-nunito leading-tight">Why Clients Choose DataMatrixIQ</h2>
+              <h2 className="text-[32px] font-bold text-[#2d465e] mb-12 font-nunito leading-[1.2]">Why Clients Choose DataMatrixIQ</h2>
               <div className="space-y-12">
                 {[
                   { title: "Deep Engineering Expertise", desc: "Specialists in Data & AI engineering, Snowflake, Salesforce, and Cloud platforms (AWS, Azure, GCP)." },
@@ -1298,10 +1376,16 @@ const ClientsPage = () => {
                   { title: "True Partnership Approach", desc: "We work as an extension of your team, providing transparent communication and agile delivery." },
                   { title: "Scalable & Future-Ready Architecture", desc: "Our solutions are designed to grow with your business." }
                 ].map((item, i) => (
-                  <div key={i}>
-                    <h3 className="text-xl font-bold text-[#2d465e] mb-4 font-nunito">{item.title}</h3>
-                    <p className="text-gray-500 font-roboto leading-relaxed">{item.desc}</p>
-                  </div>
+                  <motion.div 
+                    key={i}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.1 }}
+                  >
+                    <h3 className="text-[20px] font-bold text-[#2d465e] mb-4 font-nunito">{item.title}</h3>
+                    <p className="text-[16px] text-[#212529] font-roboto leading-[1.6]">{item.desc}</p>
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -1347,8 +1431,8 @@ const ContactPage = () => {
       <section className="py-24 overflow-hidden relative">
         <div className="container mx-auto px-6 max-w-[1320px] text-center mb-16 pt-10">
           <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6 }}>
-            <h1 className="text-5xl lg:text-6xl font-bold text-[#2d465e] mb-6 font-nunito">Contact</h1>
-            <p className="text-xl text-gray-500 max-w-4xl mx-auto font-roboto leading-relaxed">
+            <h1 className="text-[48px] font-bold text-[#2d465e] mb-6 font-nunito">Contact</h1>
+            <p className="text-[16px] text-[#212529] max-w-4xl mx-auto font-roboto leading-[1.6]">
               Let's start a conversation about your goals.Our experts are ready to deliver measurable results.
             </p>
           </motion.div>
@@ -1435,10 +1519,15 @@ const ContactPage = () => {
 const ScheduleACall = ({ onOpenModal }) => (
   <section className="bg-white pb-24 border-t border-gray-100">
     <div className="container mx-auto px-6 max-w-[1320px]">
-      <div className="bg-[#0d83fd] text-white p-24 rounded-[4rem] text-center shadow-2xl relative overflow-hidden">
-        <h2 className="text-5xl font-bold mb-8 font-nunito">Schedule a Call</h2>
-        <p className="max-w-4xl mx-auto mb-14 text-xl opacity-90 leading-relaxed font-roboto">Let’s Build Your Data Foundation Together. Struggling with slow insights, outdated pipelines, or disconnected platforms? Let’s design a solution that scales.</p>
-        <button onClick={onOpenModal} className="border-2 border-white px-16 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-blue-600 transition-all font-inter">Book a Call</button>
+      <div className="bg-[#0c67c4] text-white p-24 rounded-[4rem] text-center shadow-2xl relative overflow-hidden">
+        <h2 className="text-[48px] font-bold mb-8 font-nunito !text-white">Schedule a Call</h2>
+        <p className="max-w-4xl mx-auto mb-14 text-[20px] opacity-90 leading-[1.6] font-roboto !text-white">Let’s Build Your Data Foundation Together. Struggling with slow insights, outdated pipelines, or disconnected platforms? Let’s design a solution that scales.</p>
+        <Link 
+          to="/contact-us" 
+          className="bg-white/15 border-2 border-white text-white px-16 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-[#0c67c4] transition-all font-inter inline-block"
+        >
+          Book a Call
+        </Link>
       </div>
     </div>
   </section>
@@ -1456,7 +1545,6 @@ const HomePage = ({ onOpenModal }) => (
 )
 
 const IndustriesPage = () => {
-  const [activeSlide, setActiveSlide] = useState(0)
   useEffect(() => { window.scrollTo(0, 0) }, [])
 
   const allIndustries = [
@@ -1474,10 +1562,10 @@ const IndustriesPage = () => {
   ]
 
   const featured = [
-    { title: "Power & Energy", sub: "Smart grid & forecasting solutions.", icon: <Zap size={40} />, details: ["AI Demand Forecasting", "Grid Optimization", "Renewable Integration", "Predictive Maintenance"], bg: "from-yellow-50 to-orange-50" },
-    { title: "Retail & CPG", sub: "Personalized experiences & supply intelligence.", icon: <ShoppingCart size={40} />, details: ["Customer 360 Analytics", "Smart Inventory", "Demand Planning", "Recommendation Engines"], bg: "from-blue-50 to-indigo-50" },
-    { title: "Banking & Finance", sub: "Predictive risk & secure operations.", icon: <CreditCard size={40} />, details: ["Fraud Detection AI", "Credit Risk Modeling", "Regulatory Compliance", "Real-time Payments"], bg: "from-green-50 to-teal-50" },
-    { title: "Healthcare", sub: "Clinical analytics & patient intelligence.", icon: <Activity size={40} />, details: ["Patient Risk Scoring", "Clinical Decision Support", "Revenue Cycle Analytics", "Population Health"], bg: "from-pink-50 to-red-50" },
+    { title: "Power & Energy", sub: "Smart grid & forecasting solutions.", icon: <Zap size={40} /> },
+    { title: "Retail & CPG", sub: "Personalized experiences & supply intelligence.", icon: <ShoppingCart size={40} /> },
+    { title: "Banking & Finance", sub: "Predictive risk & secure operations.", icon: <CreditCard size={40} /> },
+    { title: "Healthcare", sub: "Clinical analytics & patient intelligence.", icon: <Activity size={40} /> },
   ]
 
   const partners = ["Fivetran", "Sigma", "Prophecy", "AWS", "Salesforce", "Microsoft", "Snowflake", "Collibra"]
@@ -1485,51 +1573,55 @@ const IndustriesPage = () => {
   return (
     <div className="bg-white min-h-screen">
       {/* Hero */}
-      <section className="relative py-40 overflow-hidden bg-gradient-to-br from-[#0d1b2a] via-[#14263a] to-[#0c67c4]">
-        <div className="absolute inset-0" style={{ backgroundImage: `url('https://datamatrixiq.com/media/vnsabjs2/portfolio-page-title-bg.webp')`, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.15 }} />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0d1b2a]/90 via-[#14263a]/85 to-[#0c67c4]/80" />
-        <div className="container mx-auto px-6 max-w-[1320px] relative z-10">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <motion.div initial={{ y: 40, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.8 }}>
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 px-5 py-2 rounded-full text-sm font-bold mb-10 font-inter">
-                <span className="w-2 h-2 bg-[#0c67c4] rounded-full animate-pulse" />
-                11 Industries. One AI-First Partner.
-              </div>
-              <h1 className="text-5xl lg:text-[3.8rem] font-bold text-white mb-8 font-nunito leading-[1.05] tracking-tight">
-                Intelligence That Transforms<br /><span className="text-[#60a5fa]">Every Industry.</span>
+      <section className="relative py-28 lg:py-40 bg-white overflow-hidden">
+        <div className="container mx-auto px-6 max-w-[1320px] relative z-20">
+          <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+            {/* Left Column: Text Content */}
+            <motion.div 
+              initial={{ x: -60, opacity: 0 }} 
+              animate={{ x: 0, opacity: 1 }} 
+              transition={{ duration: 0.8 }}
+              className="lg:w-[60%]"
+            >
+              <h1 className="text-[48px] font-bold text-[#2d465e] mb-10 font-nunito leading-[1.2] tracking-tight">
+                Intelligence That Transforms <br className="hidden lg:block" /> Every Industry.
               </h1>
-              <p className="text-xl text-white/80 mb-14 font-roboto leading-relaxed max-w-xl">
+              <p className="text-[16px] text-[#212529] mb-14 font-roboto leading-[1.6] max-w-2xl">
                 From energy to healthcare, from retail to finance — we bring AI and data-driven innovation that fuels growth, resilience, and sustainability.
               </p>
-              <div className="flex gap-6 flex-wrap">
-                <a href="#industries-grid" onClick={e => { e.preventDefault(); document.getElementById('industries-grid')?.scrollIntoView({ behavior: 'smooth', block: 'start' }) }} className="bg-[#0c67c4] text-white px-10 py-4 rounded-full font-bold hover:bg-blue-500 transition-all flex items-center gap-2 shadow-xl">
-                  Explore Industries <ArrowRight size={18} />
+              <div className="flex flex-wrap gap-6">
+                <a 
+                  href="#industries-grid" 
+                  onClick={e => { e.preventDefault(); document.getElementById('industries-grid')?.scrollIntoView({ behavior: 'smooth' }) }} 
+                  className="bg-[#0c67c4] text-white px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:bg-blue-600 transition-all flex items-center gap-2 group"
+                >
+                  Explore Industries <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                 </a>
-                <Link to="/contact-us" className="border-2 border-white/40 text-white px-10 py-4 rounded-full font-bold hover:bg-white/10 transition-all">
+                <Link 
+                  to="/contact-us" 
+                  className="border-2 border-[#0c67c4] text-[#0c67c4] px-10 py-4 rounded-full font-bold text-lg hover:bg-[#0c67c4] hover:text-white transition-all shadow-md"
+                >
                   Book a Call
                 </Link>
               </div>
             </motion.div>
-            <motion.div initial={{ x: 60, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.9, delay: 0.2 }} className="hidden lg:flex justify-center">
-              <div className="relative w-[430px] h-[430px]">
-                <div className="absolute inset-0 rounded-full border-2 border-white/10 animate-spin" style={{ animationDuration: '30s' }} />
-                <div className="absolute inset-8 rounded-full border border-white/10 animate-spin" style={{ animationDuration: '20s', animationDirection: 'reverse' }} />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-8 text-center">
-                    <div className="text-6xl font-black text-white mb-2">11</div>
-                    <div className="text-white/70 font-bold text-sm uppercase tracking-widest">Industries</div>
-                    <div className="w-10 h-[2px] bg-[#0c67c4] mx-auto my-3" />
-                    <div className="text-white/50 text-xs">One unified approach<br />to intelligence</div>
-                  </div>
+
+            {/* Right Column: Featured Image */}
+            <motion.div 
+              initial={{ scale: 0.9, opacity: 0 }} 
+              animate={{ scale: 1, opacity: 1 }} 
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="lg:w-[40%] w-full"
+            >
+              <div className="relative">
+                <div className="absolute -inset-4 bg-[#0c67c4]/5 rounded-[3rem] blur-2xl" />
+                <div className="relative bg-white p-6 lg:p-10 rounded-[2.5rem] shadow-[0_20px_100px_rgba(0,0,0,0.08)] border border-gray-100 overflow-hidden transform hover:scale-[1.02] transition-transform duration-700">
+                  <img 
+                    src="https://datamatrixiq.com/media/g4ipsjwu/industries_banner.png" 
+                    alt="Industries Roadmap" 
+                    className="w-full h-auto object-contain "
+                  />
                 </div>
-                {[{ label: 'Energy', angle: 0 }, { label: 'Retail', angle: 60 }, { label: 'Finance', angle: 120 }, { label: 'Health', angle: 180 }, { label: 'Mining', angle: 240 }, { label: 'AI', angle: 300 }].map(({ label, angle }) => {
-                  const rad = (angle * Math.PI) / 180
-                  const x = 50 + 42 * Math.cos(rad - Math.PI / 2)
-                  const y = 50 + 42 * Math.sin(rad - Math.PI / 2)
-                  return (
-                    <div key={label} style={{ position: 'absolute', left: `${x}%`, top: `${y}%`, transform: 'translate(-50%,-50%)' }} className="bg-[#0c67c4] text-white text-[10px] font-bold px-3 py-1.5 rounded-full shadow-lg">{label}</div>
-                  )
-                })}
               </div>
             </motion.div>
           </div>
@@ -1540,19 +1632,26 @@ const IndustriesPage = () => {
       <section id="industries-grid" className="py-32 bg-[#f3f9ff]">
         <div className="container mx-auto px-6 max-w-[1320px]">
           <div className="text-center mb-20">
-            <h2 className="text-[36px] font-bold text-[#2d465e] mb-4 font-nunito">Intelligence Everywhere</h2>
+            <h2 className="text-[32px] font-bold text-[#2d465e] mb-4 font-nunito">Intelligence Everywhere</h2>
             <div className="w-14 h-[3px] bg-[#0c67c4] mx-auto mb-8" />
-            <p className="text-gray-500 max-w-3xl mx-auto text-lg leading-relaxed font-roboto">11 industries — one unified approach to intelligence.</p>
+            <p className="text-[#212529] max-w-3xl mx-auto text-[16px] leading-[1.6] font-roboto">11 industries — one unified approach to intelligence.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {allIndustries.map((ind, i) => (
-              <div key={i} className="bg-white p-10 rounded-[2.5rem] border border-gray-100 shadow-sm flex flex-col items-center text-center hover:shadow-xl hover:-translate-y-2 transition-all group cursor-pointer">
+              <motion.div 
+                key={i} 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.05 }}
+                className="bg-white p-10 rounded-[2.5rem] border border-gray-100 shadow-sm flex flex-col items-center text-center hover:shadow-xl hover:-translate-y-2 transition-all group cursor-pointer"
+              >
                 <div className="w-16 h-16 bg-[#e7f1ff] rounded-2xl flex items-center justify-center mb-8 text-[#0c67c4] group-hover:bg-[#0c67c4] group-hover:text-white transition-all">
                   {ind.icon}
                 </div>
-                <h3 className="text-[16px] font-bold text-[#2d465e] mb-4 font-nunito">{ind.title}</h3>
-                <p className="text-gray-400 text-[12px] leading-relaxed font-roboto">{ind.desc}</p>
-              </div>
+                <h3 className="text-[18px] font-bold text-[#2d465e] mb-4 font-nunito">{ind.title}</h3>
+                <p className="text-[#212529] text-[13px] leading-relaxed font-roboto">{ind.desc}</p>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -1562,31 +1661,31 @@ const IndustriesPage = () => {
       <section className="py-32 bg-white">
         <div className="container mx-auto px-6 max-w-[1320px]">
           <div className="flex items-end justify-between mb-16">
-            <div>
-              <h2 className="text-4xl font-bold text-[#2d465e] mb-4 font-nunito">Featured Industries</h2>
+            <motion.div 
+               initial={{ opacity: 0, x: -30 }}
+               whileInView={{ opacity: 1, x: 0 }}
+               viewport={{ once: true }}
+               transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-[32px] font-bold text-[#2d465e] mb-4 font-nunito">Featured Industries</h2>
               <div className="w-14 h-[3px] bg-[#0c67c4] mb-4" />
-              <p className="text-gray-500 font-roboto">Transforming Industries with Data Intelligence</p>
-            </div>
-            <div className="flex gap-3">
-              <button onClick={() => setActiveSlide(s => (s - 1 + featured.length) % featured.length)} className="w-11 h-11 bg-[#2d465e] text-white rounded-full flex items-center justify-center hover:bg-[#0c67c4] transition-colors"><ChevronDown className="rotate-90" size={18} /></button>
-              <button onClick={() => setActiveSlide(s => (s + 1) % featured.length)} className="w-11 h-11 bg-[#2d465e] text-white rounded-full flex items-center justify-center hover:bg-[#0c67c4] transition-colors"><ChevronDown className="-rotate-90" size={18} /></button>
-            </div>
+              <p className="text-[#212529] font-roboto text-[16px]">Transforming Industries with Data Intelligence</p>
+            </motion.div>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {featured.map((f, i) => (
-              <div key={i} onClick={() => setActiveSlide(i)} className={cn("p-10 rounded-[2.5rem] border-2 cursor-pointer transition-all", i === activeSlide ? "border-[#0c67c4] bg-[#0c67c4] text-white shadow-2xl" : "border-gray-100 bg-white hover:shadow-lg")}>
-                <div className={cn("mb-8", i === activeSlide ? "text-white" : "text-[#0c67c4]")}>{f.icon}</div>
-                <h3 className={cn("text-xl font-bold mb-3 font-nunito", i === activeSlide ? "text-white" : "text-[#2d465e]")}>{f.title}</h3>
-                <p className={cn("text-sm mb-8 font-roboto", i === activeSlide ? "text-white/80" : "text-gray-500")}>{f.sub}</p>
-                <ul className="space-y-3">
-                  {f.details.map((d, j) => (
-                    <li key={j} className={cn("flex items-center gap-3 text-sm font-bold", i === activeSlide ? "text-white" : "text-[#2d465e]")}>
-                      <CheckCircle size={14} className={i === activeSlide ? "text-white" : "text-[#0c67c4]"} />
-                      {d}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <motion.div 
+                key={i} 
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="p-10 rounded-[2.5rem] border border-gray-100 bg-white hover:shadow-2xl hover:border-[#0c67c4] hover:-translate-y-2 transition-all group flex flex-col items-center text-center"
+              >
+                <div className="mb-8 text-[#0c67c4] transform group-hover:scale-110 transition-transform">{f.icon}</div>
+                <h3 className="text-[20px] font-bold text-[#2d465e] mb-4 font-nunito">{f.title}</h3>
+                <p className="text-[#212529] text-[14px] font-roboto leading-relaxed">{f.sub}</p>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -1596,9 +1695,14 @@ const IndustriesPage = () => {
       <section className="py-32 bg-[#f3f9ff]">
         <div className="container mx-auto px-6 max-w-[1320px]">
           <div className="grid lg:grid-cols-2 gap-24 items-center">
-            <div>
-              <h2 className="text-[2.6rem] font-bold text-[#2d465e] mb-8 font-nunito leading-tight">Why Global Enterprises Choose DataMatrixIQ</h2>
-              <p className="text-gray-500 text-lg mb-12 font-roboto leading-relaxed">
+            <motion.div 
+               initial={{ opacity: 0, x: -30 }}
+               whileInView={{ opacity: 1, x: 0 }}
+               viewport={{ once: true }}
+               transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-[32px] font-bold text-[#2d465e] mb-8 font-nunito leading-[1.2]">Why Global Enterprises Choose DataMatrixIQ</h2>
+              <p className="text-[#212529] text-[16px] mb-12 font-roboto leading-[1.6]">
                 Deep industry understanding combined with AI innovation. Proven accelerators for faster deployment. Secure, scalable, cloud-first architecture. Commitment to ethical AI and sustainability.
               </p>
               <div className="grid grid-cols-2 gap-6 mb-12">
@@ -1608,19 +1712,24 @@ const IndustriesPage = () => {
                   { title: "Secure Scalable Architecture", icon: <Shield size={20} /> },
                   { title: "Ethical AI Commitment", icon: <CheckCircle size={20} /> },
                 ].map((p, i) => (
-                  <div key={i} className="flex items-center gap-4 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                  <div key={i} className="flex items-center gap-4 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:border-[#0c67c4] transition-all">
                     <div className="text-[#0c67c4] shrink-0">{p.icon}</div>
                     <span className="font-bold text-[#2d465e] text-sm font-nunito">{p.title}</span>
                   </div>
                 ))}
               </div>
-            </div>
-            <div>
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
               <div className="bg-white p-12 pr-12 pb-16 rounded-[4rem] shadow-[0_10px_40px_rgba(0,0,0,0.06)] border border-gray-100 flex flex-col items-center justify-center">
                 <h3 className="text-xl font-bold text-[#2d465e] mb-14 font-nunito text-center">Our Technology Partners</h3>
                 <img src="https://datamatrixiq.com/img/service-image.png" alt="Technology Partners" className="w-[110%] h-auto object-contain transform scale-105" />
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -1628,11 +1737,14 @@ const IndustriesPage = () => {
       {/* CTA */}
       <section className="py-32 bg-gradient-to-r from-[#0d1b2a] to-[#0c67c4] text-white">
         <div className="container mx-auto px-6 max-w-[1320px] text-center">
-          <h2 className="text-5xl font-bold mb-8 font-nunito">Let's Redefine What's Possible<br />in Your Industry.</h2>
-          <p className="text-xl opacity-80 mb-14 max-w-2xl mx-auto font-roboto leading-relaxed">
+          <h2 className="text-[48px] font-bold mb-8 font-nunito leading-[1.2] !text-white">Let's Redefine What's Possible<br />in Your Industry.</h2>
+          <p className="text-[18px] opacity-80 mb-14 max-w-2xl mx-auto font-roboto leading-[1.6] !text-white">
             Partner with DataMatrixIQ to harness data, AI, and innovation that transform performance, sustainability, and growth.
           </p>
-          <Link to="/contact-us" className="bg-white text-[#0c67c4] px-16 py-5 rounded-full font-bold text-xl hover:scale-105 transition-all shadow-2xl inline-block">
+          <Link 
+            to="/contact-us" 
+            className="bg-white/15 border-2 border-white text-white px-16 py-5 rounded-full font-bold text-xl hover:bg-white hover:text-[#0c67c4] transition-all shadow-2xl inline-block"
+          >
             Book a Call
           </Link>
         </div>
@@ -1658,6 +1770,8 @@ function App() {
         <Route path="/core-capabilities" element={<CapabilitiesPage onOpenModal={openModal} />} />
         <Route path="/contact-us" element={<ContactPage />} />
         <Route path="/team-profile/:id" element={<TeamProfilePage />} />
+        <Route path="/privacy-policy" element={<HomePage onOpenModal={openModal} />} />
+        <Route path="/terms-of-use" element={<HomePage onOpenModal={openModal} />} />
         <Route path="*" element={<HomePage onOpenModal={openModal} />} />
       </Routes>
       <HeroModal isOpen={isModalOpen} onClose={closeModal} />
