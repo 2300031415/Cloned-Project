@@ -1159,7 +1159,7 @@ const ServicesPage = ({ onOpenModal }) => {
       subtitle: "Data Engineering",
       desc: "Transform your data ecosystem into a high-performance, governed, and insight-driven powerhouse. We architect modern data solutions that satisfy today's reporting needs while powering tomorrow's AI innovation.",
       items: ["Enterprise Data Strategy & Governance", "ETL/ELT Pipeline Automation", "Modern Data Platforms (Snowflake, Databricks, BigQuery)"],
-      img: "media__1774686486809.png",
+      img: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=2000&auto=format&fit=crop",
       icon: <Database />,
       bg: "bg-[#f3f9ff]"
     },
@@ -1169,7 +1169,7 @@ const ServicesPage = ({ onOpenModal }) => {
       subtitle: "AI & ML Solutions",
       desc: "Go beyond basic analytics. We help enterprises embed intelligence directly into their operations through scalable machine learning models and generative AI frameworks.",
       items: ["Predictive Analytics & Forecasting", "Natural Language Processing (NLP)", "Generative AI & LLM Integration"],
-      img: "media__1774686464129.png",
+      img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2000&auto=format&fit=crop",
       icon: <Cpu />,
       bg: "bg-white"
     },
@@ -1179,7 +1179,7 @@ const ServicesPage = ({ onOpenModal }) => {
       subtitle: "Application Modernization",
       desc: "Upgrade legacy systems into modern, agile, and cloud-ready applications — engineered for speed, security, and scalability. We help you transition from monolithic architectures to high-performance microservices.",
       items: ["Cloud Native App Development", "Monolith to Microservices Transition", "CI/CD & DevSecOps Implementation"],
-      img: "media__1774686509364.png",
+      img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop",
       icon: <RefreshCcw />,
       bg: "bg-[#f3f9ff]"
     },
@@ -1189,7 +1189,7 @@ const ServicesPage = ({ onOpenModal }) => {
       subtitle: "Salesforce Data Engineering",
       desc: "Unify customer data across every touchpoint with Salesforce Data Cloud, enabling real-time insights, personalization, and smarter engagement powered by AI-driven analytics.",
       items: ["Salesforce Data Cloud Implementation", "Tableau & CRM Analytics Integration", "Intelligent Automation within Salesforce"],
-      img: "media__1774686498606.png",
+      img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2000&auto=format&fit=crop",
       icon: <Cloud />,
       bg: "bg-white"
     },
@@ -1199,7 +1199,7 @@ const ServicesPage = ({ onOpenModal }) => {
       subtitle: "Cloud & Cybersecurity",
       desc: "Build secure, scalable, and compliant cloud environments that empower digital transformation. We ensure your infrastructure is not just powerful, but also protected by the highest security standards.",
       items: ["Enterprise Landing Zone (ELZ) Setup", "Multi-Cloud Migration & Management", "Proactive Security & Compliance Frameworks"],
-      img: "media__1774686475895.png",
+      img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2000&auto=format&fit=crop",
       icon: <Workflow />,
       bg: "bg-[#f3f9ff]"
     }
