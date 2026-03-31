@@ -168,7 +168,7 @@ const Navbar = ({ onOpenModal }) => {
       <div className="container mx-auto px-6 max-w-[1320px] flex items-center">
         <div className="flex-shrink-0">
           <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <img src="https://datamatrixiq.com/media/cyqpirwk/untitled-design-1-1.png" alt="DataMatrixIQ" className="h-[48px] w-auto" />
+            <img src="https://datamatrixiq.com/media/cyqpirwk/untitled-design-1-1.png" alt="DataMatrixIQ" className="h-[56px] w-auto" />
           </Link>
         </div>
 
@@ -177,7 +177,7 @@ const Navbar = ({ onOpenModal }) => {
             {/* 1. Services - Mega Menu */}
             <li className="relative group" onMouseEnter={() => { setActiveMenu('services'); setActiveTab(0); }} onMouseLeave={() => setActiveMenu(null)}>
               <Link to="/services" className={cn("px-4 py-4 hover:text-[#0c67c4] flex items-center gap-1 transition-colors text-black", (activeMenu === 'services' || location.pathname === '/services') && "text-[#0c67c4]")}>
-                Services <ChevronDown size={14} className={cn("transition-transform duration-300", activeMenu === 'services' ? "rotate-180 translate-y-[1px]" : "translate-y-[1px]")} />
+                Services <ChevronDown size={20} className={cn("transition-transform duration-300", activeMenu === 'services' ? "rotate-180 translate-y-[1px]" : "translate-y-[1px]")} />
               </Link>
               <AnimatePresence>
                 {activeMenu === 'services' && (
@@ -211,7 +211,7 @@ const Navbar = ({ onOpenModal }) => {
             {/* 2. Partnerships - Internal anchor */}
             <li className="relative group" onMouseEnter={() => setActiveMenu('partnerships')} onMouseLeave={() => setActiveMenu(null)}>
               <Link to="/about-us#partnership" className={cn("px-4 py-4 hover:text-[#0c67c4] flex items-center gap-1 transition-colors text-black", activeMenu === 'partnerships' && "text-[#0c67c4]")}>
-                Partnerships <ChevronDown size={14} className={cn("transition-transform", activeMenu === 'partnerships' && "rotate-180")} />
+                Partnerships <ChevronDown size={20} className={cn("transition-transform", activeMenu === 'partnerships' && "rotate-180")} />
               </Link>
               <AnimatePresence>
                 {activeMenu === 'partnerships' && (
@@ -230,7 +230,7 @@ const Navbar = ({ onOpenModal }) => {
             {/* 3. Industries - Dedicated Page */}
             <li className="relative group" onMouseEnter={() => { setActiveMenu('industries'); setActiveTab(0); }} onMouseLeave={() => setActiveMenu(null)}>
               <Link to="/industries" className={cn("px-4 py-4 hover:text-[#0c67c4] flex items-center gap-1 transition-colors text-black", (activeMenu === 'industries' || location.pathname === '/industries') && "text-[#0c67c4]")}>
-                Industries <ChevronDown size={14} className={cn("transition-transform", activeMenu === 'industries' && "rotate-180")} />
+                Industries <ChevronDown size={20} className={cn("transition-transform", activeMenu === 'industries' && "rotate-180")} />
               </Link>
               <AnimatePresence>
                 {activeMenu === 'industries' && (
@@ -776,9 +776,9 @@ const AboutPage = ({ onOpenModal }) => {
       </section>
 
       {/* Schedule A Call (Call To Action 2) */}
-      <section className="py-40 bg-[#0d83fd] text-white text-center relative overflow-hidden">
+      <section className="py-20 bg-[#0d83fd] text-white text-center relative overflow-hidden">
         <div className="container mx-auto px-6 max-w-[1320px] relative z-10">
-          <h4 className="text-[3rem] lg:text-[4.5rem] font-bold mb-8 font-nunito leading-tight">Schedule a Call</h4>
+          <h6 className="text-[3rem] lg:text-[4.5rem] font-bold mb-8 font-nunito leading-tight">Schedule a Call</h6>
           <p className="text-xl text-white/90 mb-14 max-w-3xl mx-auto font-roboto leading-relaxed">
             Let's Build Your Data Foundation Together. Struggling with slow insights, outdated pipelines, or disconnected platforms? Let's design a solution that scales with your needs and accelerates your business.
           </p>
