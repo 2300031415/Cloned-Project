@@ -587,18 +587,22 @@ const TeamProfilePage = () => {
           <div className="lg:w-4/12">
             <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}>
               <div className="relative mb-10">
-                <img src={member.img} alt={member.name} className="w-full rounded-3xl shadow-xl object-cover aspect-square" />
+                <div className="w-full aspect-square rounded-full overflow-hidden shadow-xl border-4 border-white">
+                  <img src={member.img} alt={member.name} className="w-full h-full object-cover" />
+                </div>
                 <a
                   href={member.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  className="absolute bottom-4 right-4 bg-[#0077b5] text-white w-12 h-12 rounded-full flex items-center justify-center border-[4px] border-white shadow-2xl hover:scale-110 transition-transform z-10"
+                  className="absolute bottom-6 right-6 bg-[#0077b5] text-white w-14 h-14 rounded-full flex items-center justify-center border-[4px] border-white shadow-2xl hover:scale-110 transition-transform z-10"
                 >
-                  <Linkedin size={22} fill="currentColor" />
+                  <Linkedin size={24} fill="currentColor" />
                 </a>
               </div>
-              <h1 className="text-3xl font-bold text-[#212529] mb-2 font-nunito">{member.name}</h1>
-              <p className="text-[#0c67c4] font-bold text-lg mb-10 font-inter">{member.role}</p>
+              <h1 className="text-3xl font-bold text-[#212529] mb-4 font-nunito">{member.name}</h1>
+              <div className="border-[1.5px] border-[#2d465e] px-6 py-2 mb-10 inline-flex items-center justify-center rounded-lg">
+                <p className="text-[#2d465e] text-[16px] font-bold font-roboto leading-snug">{member.role}</p>
+              </div>
 
               <div className="flex flex-col gap-4">
                 <a href={member.linkedin} target="_blank" className="flex items-center gap-4 group">
@@ -835,19 +839,6 @@ const CapabilitiesPage = ({ onOpenModal }) => {
         "Managed services & optimization"
       ],
       footer: "Connected customer journeys and real-time insights."
-    },
-    {
-      title: "Cloud, DevOps & Platform Engineering",
-      desc: "Reliable, secure, and scalable digital platforms.",
-      icon: <Cloud className="w-6 h-6" />,
-      bullets: [
-        "CI/CD pipelines & DevSecOps",
-        "Infrastructure as Code",
-        "Kubernetes & containerization",
-        "Monitoring & observability",
-        "Cost and performance optimization"
-      ],
-      footer: "Faster releases with enterprise-grade reliability."
     },
     {
       title: "Advisory, Engineering & Managed Services",
