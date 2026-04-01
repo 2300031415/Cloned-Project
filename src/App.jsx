@@ -339,7 +339,7 @@ const Hero = ({ onOpenModal }) => (
     <div className="container mx-auto px-6 relative z-20 text-white max-w-[1320px] py-20">
       <motion.div initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.8 }} className="max-w-4xl">
         <h1 className="text-[32px] md:text-[48px] lg:text-[48px] font-bold !text-white leading-[1.2] mb-6 md:mb-8 font-nunito tracking-tight pt-4 md:pt-10">
-          Transformation Your Data & Saleforce Journey with AI.
+          Transforming Your Data & Saleforce Journey with AI.
         </h1>
         <p className="text-[16px] md:text-[20px] !text-white/90 mb-8 md:mb-12 max-w-2xl font-roboto leading-[1.6]">
           With data made simple, DataMatrixIQ paves the way to a scalable, smarter and more powerful data journey.
